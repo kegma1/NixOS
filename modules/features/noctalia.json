@@ -342,7 +342,7 @@
       "position": "center",
       "pinnedApps": [],
       "sortByMostUsed": true,
-      "terminalCommand": "alacritty -e",
+      "terminalCommand": "kitty -e",
       "customLaunchPrefixEnabled": false,
       "customLaunchPrefix": "",
       "viewMode": "list",
@@ -734,28 +734,44 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/kennet/Pictures/Wallpapers/satellites.png"
+      "DP-1": "/home/kennet/Pictures/Wallpapers/satellites.png",
+      "DP-2": "/home/kennet/Pictures/Wallpapers/satellites.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "eDP-1": {
-        "name": "eDP-1",
+      "DP-1": {
+        "name": "DP-1",
         "connected": true,
-        "scale": 1.5,
-        "width": 1493,
-        "height": 933,
+        "scale": 1,
+        "width": 2560,
+        "height": 1440,
+        "x": 3440,
+        "y": 0,
+        "physical_width": 600,
+        "physical_height": 340,
+        "refresh_rate": 164999,
+        "vrr_supported": true,
+        "vrr_enabled": false,
+        "transform": "Normal"
+      },
+      "DP-2": {
+        "name": "DP-2",
+        "connected": true,
+        "scale": 1,
+        "width": 3440,
+        "height": 1440,
         "x": 0,
         "y": 0,
-        "physical_width": 300,
-        "physical_height": 190,
-        "refresh_rate": 59998,
-        "vrr_supported": false,
+        "physical_width": 810,
+        "physical_height": 350,
+        "refresh_rate": 174962,
+        "vrr_supported": true,
         "vrr_enabled": false,
         "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1780837924000
+      "lastSeenTs": 1780915076000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

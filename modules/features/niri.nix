@@ -13,7 +13,7 @@
           (lib.getExe self'.packages.myNoctalia)
         ];
         input = {
-          # focus-follows-mouse = _: {};
+          focus-follows-mouse = _: {};
 
           keyboard = {
             xkb = {
@@ -57,18 +57,30 @@
         };
 
         prefer-no-csd = _: {};
-        layout.gaps = 5;
+        hotkey-overlay.skip-at-startup = _: {};
 
-        # preset-column-width = {
-        #   proportion = [ 0.33333 0.5 0.66667 ];
-        # };
+        layout = {
+          gaps = 5;
+          preset-column-widths = [
+            { proportion = 0.5; }
+            { proportion = 0.666667; }
+            { proportion = 0.333333; }
+          ];
+        };
+        
+        window-rule = {
+          geometry-corner-radius = 12;
+          clip-to-geometry = true;
+          background-effect.blur = true;
+        };
+        
         xwayland-satellite.path =
           lib.getExe pkgs.xwayland-satellite;
 
         binds = {
           "Mod+S".spawn-sh =
             "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-          "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
+          "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
           "Mod+Q".close-window = _: {};
           
           "Mod+F".maximize-column = _: {};
@@ -125,7 +137,7 @@
           "Mod+Ctrl+WheelScrollUp".focus-workspace-up = _: {};
 
           "Print".screenshot-screen = _: {};
-          "Shift+Print".screenshot = _: {};
+          "Mod+Shift+S".screenshot = _: {};
           "Alt+Print".screenshot-window = _: {};
         };
       };

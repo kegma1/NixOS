@@ -15,6 +15,8 @@
       alejandra
       manix
       nix-inspect
+      nvd
+      nix-output-monitor
     ];
   };
 }

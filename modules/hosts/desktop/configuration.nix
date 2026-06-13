@@ -9,6 +9,7 @@
         self.nixosModules.discord
         self.nixosModules.nix
         self.nixosModules.gaming
+        self.nixosModules.kitty
       ];
 
     # Bootloader.
@@ -33,6 +34,8 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
 
+    programs.coolercontrol.enable = true;
+   
     fileSystems."/mnt/ssd1" = {
       device = "/dev/disk/by-uuid/2d7e27ad-e4dd-47c4-a53e-d807265d083d";
       fsType = "btrfs";
@@ -42,6 +45,9 @@
       device = "/dev/disk/by-uuid/5335522b-f978-47a1-adf7-9052901bb3a4";
       fsType = "ext4";
     };
+
+    services.gvfs.enable = true;
+    services.udisks2.enable = true;
 
     xdg.portal = {
       enable = true;
@@ -106,7 +112,7 @@
     programs.firefox.enable = true;
   
     environment.systemPackages = with pkgs; [
-      kitty
+      # kitty
       alacritty
       localsend
       libva-utils
