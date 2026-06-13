@@ -13,7 +13,9 @@
           (lib.getExe self'.packages.myNoctalia)
         ];
         input = {
-          focus-follows-mouse = _: {};
+          focus-follows-mouse = _: {
+            max-scroll-amount = "95%";
+          };
 
           keyboard = {
             xkb = {
@@ -46,6 +48,7 @@
 
           
           "DP-2" = {
+            focus-at-startup = _: {};
             mode = "3440x1440@174.962";
             position = _:  {
               props = {
