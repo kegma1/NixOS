@@ -48,6 +48,9 @@
 
     services.gvfs.enable = true;
     services.udisks2.enable = true;
+    programs.appimage.enable = true;
+    programs.appimage.binfmt = true;
+
 
     xdg.portal = {
       enable = true;
@@ -64,6 +67,7 @@
     hardware.graphics.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.open = true;  # see the note above
+    hardware.cpu.amd.updateMicrocode = true;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";

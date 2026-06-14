@@ -7,13 +7,33 @@
     packages.myFastfetch = inputs.wrapper-modules.wrappers.fastfetch.wrap {
       inherit pkgs;
       settings = {
-        logo = {
-          source = "~/NixOS/ralsei.png";
-        };
+        # logo = {
+        #   source = "~/NixOS/ralsei.png";
+        # };
         modules = [
           {
             type = "os";
-            key = "";
+            key = " ";
+          }
+          {
+            type = "packages";
+            key = "󰏖 ";
+          }
+          {
+            type = "kernel";
+            key = " ";
+          }
+          {
+            type = "cpu";
+            key = " ";
+          }
+          {
+            type = "gpu";
+            key = " ";
+          }
+          {
+            type = "memory";
+            key = " ";
           }
           "uptime"
           {
