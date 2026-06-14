@@ -27,7 +27,7 @@
             condition = {
               system = "Linux";
             };
-            format = "{pretty-name<31} │";
+            format = "{pretty-name}";
           }
           {
             type = "os";
@@ -35,7 +35,7 @@
             condition = {
             system = "macOS";
             };
-            format = "{pretty-name<31} │";
+            format = "{pretty-name}";
           }
           {
             type = "packages";
@@ -45,18 +45,17 @@
           {
             type = "kernel";
             key = "│ ";
-            format = "{sysname} {release} │";
           }
           {
             type = "cpu";
             key = "│ ";
-            format = "{name<31} │";
+            format = "{name}";
           }
           {
             type = "command";
             key = "│󰢮 ";
             text = "nvidia-smi --query-gpu=name --format=csv,noheader";
-            format = "{result<31} │";
+            format = "{result}";
             condition = {
               system = "Linux";
             };
@@ -64,7 +63,7 @@
           {
             type = "gpu";
             key = "│󰢮 ";
-            format = "{name<31} │";
+            format = "{name}";
             condition = {
               system = "macOS";
             };
@@ -76,13 +75,13 @@
           {
             type = "uptime";
             key = "│ ";
-            format = "{formatted<31} │";
+            format = "{formatted}";
           }
           {
             type = "command";
             key = "│󰪺 ";
             text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
-            format = "{result<31} │";
+            format = "{result}";
           }
           {
             type = "custom";
