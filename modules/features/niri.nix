@@ -11,10 +11,12 @@
       settings = {
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
+          "steam"
+          [ "flatpak" "run" "com.discordapp.Discord" ]
         ];
         input = {
           focus-follows-mouse = _: {
-            max-scroll-amount = "95%";
+            max-scroll-amount = "0%";
           };
 
           keyboard = {
@@ -86,6 +88,25 @@
           "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
           "Mod+Q".close-window = _: {};
           
+          "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
+              inherit pkgs;
+              settings = {
+                anchor = "center";
+                menu = [
+                  {
+                    key = "d";
+                    desc = "Discord";
+                    cmd = "flatpak run com.discordapp.Discord";
+                  }
+                  {
+                    key = "z";
+                    desc = "Zen";
+                    cmd = "flatpak run app.zen_browser.zen";
+                  }
+                ];
+              };
+            }
+          );                    
           "Mod+F".maximize-column = _: {};
           "Mod+G".fullscreen-window = _: {};
           "Mod+Shift+F".toggle-window-floating = _: {};
