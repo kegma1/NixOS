@@ -7,40 +7,92 @@
     packages.myFastfetch = inputs.wrapper-modules.wrappers.fastfetch.wrap {
       inherit pkgs;
       settings = {
-        # logo = {
-        #   source = "~/NixOS/ralsei.png";
-        # };
+        logo = {
+          source = "~/NixOS/boykisser.txt";
+          type = "file";
+        };
+        display = {
+          # separator = " ";
+          separator = "│ ";
+        };
         modules = [
+          "title"
+          {
+            type = "custom";
+            format = "╭──┬─────────────────────────────────╮";
+          }
           {
             type = "os";
-            key = " ";
+            key = "│ ";
+            condition = {
+              system = "Linux";
+            };
+            format = "{pretty-name<31} │";
+          }
+          {
+            type = "os";
+            key = "│ ";
+            condition = {
+            system = "macOS";
+            };
+            format = "{pretty-name<31} │";
           }
           {
             type = "packages";
-            key = "󰏖 ";
+            key = "│󰏖 ";
+            format = "";
           }
           {
             type = "kernel";
-            key = " ";
+            key = "│ ";
+            format = "{sysname} {release} │";
           }
           {
             type = "cpu";
-            key = " ";
+            key = "│ ";
+            format = "{name<31} │";
+          }
+          {
+            type = "command";
+            key = "│󰢮 ";
+            text = "nvidia-smi --query-gpu=name --format=csv,noheader";
+            format = "{result<31} │";
+            condition = {
+              system = "Linux";
+            };
           }
           {
             type = "gpu";
-            key = " ";
+            key = "│󰢮 ";
+            format = "{name<31} │";
+            condition = {
+              system = "macOS";
+            };
           }
           {
             type = "memory";
-            key = " ";
+            key = "│ ";
           }
-          "uptime"
+          {
+            type = "uptime";
+            key = "│ ";
+            format = "{formatted<31} │";
+          }
           {
             type = "command";
-            key = "OS Age";
+            key = "│󰪺 ";
             text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
+            format = "{result<31} │";
           }
+          {
+            type = "custom";
+            format = "╰──┴─────────────────────────────────╯";
+          }
+          {
+            type = "colors";
+            symbol = "circle";
+          }
+          
         ];
       };
     };

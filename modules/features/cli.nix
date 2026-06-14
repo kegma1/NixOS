@@ -8,6 +8,7 @@
       tmux
       helix
       htop
+      tree
     ];
   };
 }
