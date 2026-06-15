@@ -1,5 +1,8 @@
 { lib, self, inputs, ... }: {
   flake.nixosModules.kitty = {pkgs, ...}: {
+    imports = [
+      self.nixosModules.fonts
+    ];
     environment.systemPackages= [self.packages.${pkgs.stdenv.hostPlatform.system}.myKitty];
   };
   perSystem = { pkgs, self',  ... }: {
