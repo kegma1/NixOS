@@ -14,7 +14,7 @@
       "contentPadding": 2,
       "fontScale": 1,
       "enableExclusionZoneInset": true,
-      "backgroundOpacity": 0.93,
+      "backgroundOpacity": 1,
       "useSeparateOpacity": false,
       "marginVertical": 4,
       "marginHorizontal": 4,
@@ -234,14 +234,14 @@
           "Del"
         ]
       },
-      "reverseScroll": false,
+      "reverseScroll": true,
       "smoothScrollEnabled": true
     },
     "ui": {
-      "fontDefault": "Sans Serif",
-      "fontFixed": "monospace",
-      "fontDefaultScale": 1,
-      "fontFixedScale": 1,
+      "fontDefault": "ComicShannsMono Nerd Font",
+      "fontFixed": "ComicShannsMono Nerd Font Mono",
+      "fontDefaultScale": 1.2,
+      "fontFixedScale": 1.2,
       "tooltipsEnabled": true,
       "scrollbarAlwaysVisible": true,
       "boxBorderEnabled": false,
@@ -252,7 +252,7 @@
       "settingsPanelSideBarCardStyle": false
     },
     "location": {
-      "name": "",
+      "name": "Ballangen",
       "weatherEnabled": true,
       "weatherShowEffects": true,
       "weatherTaliaMascotAlways": false,
@@ -265,7 +265,7 @@
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
       "hideWeatherCityName": false,
-      "autoLocate": false
+      "autoLocate": true
     },
     "calendar": {
       "cards": [
@@ -734,8 +734,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/kennet/Pictures/Wallpapers/satellites.png",
-      "DP-2": "/home/kennet/Pictures/Wallpapers/satellites.png"
+      "DP-1": "/home/kennet/Pictures/Wallpapers/windows-xp-bliss-4k-lu-2560x1440-3439635518.jpg",
+      "DP-2": "/home/kennet/Pictures/Wallpapers/windows-xp-bliss-4k-lu-3440x1440-3935449507.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {

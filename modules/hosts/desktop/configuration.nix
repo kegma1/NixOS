@@ -10,6 +10,9 @@
         self.nixosModules.nix
         self.nixosModules.gaming
         self.nixosModules.kitty
+        self.nixosModules.emulation
+        self.nixosModules.gpu-screen-recorder
+        self.nixosModules.via-qmk
       ];
 
     # Bootloader.
@@ -115,18 +118,11 @@
   
     programs.firefox.enable = true;
   
-    hardware.keyboard.qmk.enable = true;
-    services.udev.packages = [ pkgs.via ];
-
     environment.systemPackages = with pkgs; [
       # kitty
       alacritty
       localsend
       libva-utils
-      libusb1
-      hidapi
-      qmk
-      via
     ];
 
     system.stateVersion = "26.05";

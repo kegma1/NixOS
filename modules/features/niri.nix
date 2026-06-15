@@ -128,6 +128,10 @@
           "Mod+Comma".consume-or-expel-window-left = _: {};
           "Mod+Period".consume-or-expel-window-right = _: {};
 
+          "Mod+Y".focus-monitor-next = _: {};
+
+          "Mod+Shift+Y".move-window-to-monitor-next = _: {};
+
           "Mod+Shift+H".move-column-left = _: {};
           "Mod+Shift+L".move-column-right = _: {};
           "Mod+Shift+K".move-window-up = _: {};
