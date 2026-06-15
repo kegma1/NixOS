@@ -51,7 +51,6 @@
       extraPackages = with pkgs; [
         mesa
         libva
-        mesa.drivers
       ];
     };
 
