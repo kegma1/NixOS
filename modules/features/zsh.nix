@@ -42,7 +42,9 @@
         colors
 
         export PAGER=less
-
+        
+        fastfetch
+        
         # Prompt similar to many bash defaults
         # PROMPT='%n@%m:%~\$ '
         if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then

@@ -40,7 +40,7 @@
           {
             type = "packages";
             key = "│󰏖 ";
-            format = "";
+            format = "{?flatpak-all}{flatpak-all} ( ) {?}{?nix-all}{nix-all} ( ) {?}{?brew}{brew} (){?}";
           }
           {
             type = "kernel";
