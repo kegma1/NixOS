@@ -13,4 +13,14 @@
       tree
     ];
   };
+  perSystem = { pkgs, self', ... }: {
+    # packages.terminal = self'.packages.myKitty
+    
+    # packages = with pkgs; [
+    #   tmux
+    #   helix
+    #   htop
+    #   tree
+    # ];
+  };
 }

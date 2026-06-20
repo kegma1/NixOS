@@ -14,7 +14,7 @@
         shell = lib.getExe self'.packages.myZsh;
 
         background_opacity = 0.75;
-        background_blur = 0;
+        background_blur = 5;
         
         allow_remote_control = "yes";
         shell_integration = "enabled";
