@@ -9,6 +9,7 @@
         self.nixosModules.discord
         self.nixosModules.nix
         self.nixosModules.gaming
+        self.nixosModules.fonts
       ];
 
     # Bootloader.

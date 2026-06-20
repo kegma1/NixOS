@@ -3,6 +3,7 @@
     modules = [
       inputs.nix-flatpak.nixosModules.nix-flatpak
       self.nixosModules.desktopConfiguration
+      self.nixosModules.myHomeManager
      ];
   };
 }

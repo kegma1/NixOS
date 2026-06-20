@@ -16,12 +16,18 @@
     networking.hostName = "macBook"; 
   
     time.timeZone = "Europe/Oslo";
+    users.users."kennetmathisen" = {
+      name = "kennetmathisen";
+      home = "/Users/kennetmathisen";
+    };
+    home-manager.users."kennetmathisen" = self.homeModules.kennetmathisenModule;
 
     environment.systemPackages = with pkgs; [
        helix
-       self.packages.${pkgs.stdenv.hostPlatform.system}.myKitty
+       # self.packages.${pkgs.stdenv.hostPlatform.system}.myKitty
        self.packages.${pkgs.stdenv.hostPlatform.system}.myNh
        self.packages.${pkgs.stdenv.hostPlatform.system}.myFastfetch
+       self.packages.${pkgs.stdenv.hostPlatform.system}.myGit
      ];
    };
 }

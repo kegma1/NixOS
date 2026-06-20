@@ -4,7 +4,7 @@
       self.nixosModules.git
       self.nixosModules.fastfetch
       self.nixosModules.zsh
-      self.nixosModules.kitty
+      # self.nixosModules.kitty
     ];
     environment.systemPackages = with pkgs; [
       tmux
