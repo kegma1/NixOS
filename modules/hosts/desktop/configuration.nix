@@ -122,6 +122,7 @@
       packages = with pkgs; [
       ];
     };
+    home-manager.users."kennet" = self.homeModules.kennetModule;
   
     programs.firefox.enable = true;
   
