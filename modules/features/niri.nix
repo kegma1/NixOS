@@ -85,7 +85,8 @@
         binds = {
           "Mod+S".spawn-sh =
             "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-          "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
+          # "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
+          "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+Q".close-window = _: {};
           
           "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
