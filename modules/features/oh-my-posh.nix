@@ -5,9 +5,13 @@
     packages.myOh-my-posh= inputs.wrapper-modules.wrappers.oh-my-posh.wrap {
       inherit pkgs;
       settings = {
+        transient_prompt = {
+          template = " ";
+        };
         blocks = [
           {
             type = "prompt";
+            newline = true;
             alignment = "left";
             segments = [
               {
@@ -16,7 +20,19 @@
                 properties.style = "full";
                 template = "{{ .Path }}";
               }
+              {
+                type = "git";
+                
+              }
             ];
+          }
+          {
+            type = "prompt";
+            alignment = "right";
+            filler = ".";
+            segments = [{
+              type = "time";
+            }];
           }
           {
             type = "prompt";
@@ -26,7 +42,7 @@
               {
                 type = "text";
                 style = "plain";
-                template = "  ";
+                template = "{{if eq .OS \"darwin\"}}  {{else}}  {{end}}";
               }
             ];
           }

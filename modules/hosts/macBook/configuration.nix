@@ -21,6 +21,7 @@
       home = "/Users/kennetmathisen";
     };
     home-manager.users."kennetmathisen" = self.homeModules.kennetmathisenModule;
+    security.pam.services.sudo_local.touchIdAuth = true;
 
     environment.systemPackages = with pkgs; [
        helix
