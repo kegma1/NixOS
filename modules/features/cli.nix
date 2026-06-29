@@ -11,6 +11,7 @@
       helix
       htop
       tree
+      yazi
     ];
   };
   perSystem = { pkgs, self', ... }: {
