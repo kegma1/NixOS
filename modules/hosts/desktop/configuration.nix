@@ -12,6 +12,7 @@
         self.nixosModules.emulation
         self.nixosModules.gpu-screen-recorder
         self.nixosModules.via-qmk
+        self.nixosModules.creative
       ];
 
     # Bootloader.
