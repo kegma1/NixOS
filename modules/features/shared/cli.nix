@@ -12,6 +12,11 @@
       htop
       tree
       yazi
+      lazygit
+      wget
+      btop
+      ffmpeg-full
+      yt-dlp
     ];
   };
   perSystem = { pkgs, self', ... }: {
