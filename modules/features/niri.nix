@@ -16,7 +16,7 @@
         ];
         input = {
           focus-follows-mouse = _: {
-            max-scroll-amount = "0%";
+           props.max-scroll-amount = "0%";
           };
 
           keyboard = {
@@ -65,12 +65,17 @@
         hotkey-overlay.skip-at-startup = _: {};
 
         layout = {
-          gaps = 5;
+          gaps = 10;
           preset-column-widths = [
             { proportion = 0.5; }
             { proportion = 0.666667; }
             { proportion = 0.333333; }
           ];
+          focus-ring =  {
+            active-color = "#fe8019";
+            width = 2;
+          };
+          shadow.on = _: {};
         };
         
         window-rule = {

@@ -131,6 +131,7 @@
       alacritty
       localsend
       libva-utils
+      self.packages.${pkgs.stdenv.hostPlatform.system}.myNh
     ];
 
     system.stateVersion = "26.05";
