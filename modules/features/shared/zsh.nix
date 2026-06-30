@@ -50,6 +50,7 @@
         if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
           eval "$(${lib.getExe self'.packages.myOh-my-posh} init zsh)"
         fi
+        source <(fzf --zsh)
       '';
     };
   };
