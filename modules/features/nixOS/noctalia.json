@@ -2,7 +2,7 @@
   "settings": {
     "settingsVersion": 59,
     "bar": {
-      "barType": "framed",
+      "barType": "floating",
       "position": "left",
       "monitors": [],
       "density": "default",
@@ -317,7 +317,7 @@
       "overviewBlur": 0.4,
       "overviewTint": 0.6,
       "useWallhaven": false,
-      "wallhavenQuery": "",
+      "wallhavenQuery": "painting",
       "wallhavenSorting": "relevance",
       "wallhavenOrder": "desc",
       "wallhavenCategories": "111",
@@ -734,8 +734,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/kennet/Pictures/Wallpapers/windows-xp-bliss-4k-lu-2560x1440-3439635518.jpg",
-      "DP-2": "/home/kennet/Pictures/Wallpapers/windows-xp-bliss-4k-lu-3440x1440-3935449507.jpg"
+      "DP-1": "/home/kennet/Pictures/Wallpapers/Cat_at_Play.png",
+      "DP-2": "/home/kennet/Pictures/Wallpapers/Cat_at_Play.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -771,7 +771,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1780915076000
+      "lastSeenTs": 1782570930000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"

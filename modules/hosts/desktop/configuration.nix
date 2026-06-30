@@ -18,6 +18,8 @@
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.kernelParams = [ "quiet" ];
+    boot.plymouth.enable = true;
   
     networking.hostName = "desktop"; 
   
@@ -133,6 +135,7 @@
       localsend
       libva-utils
       self.packages.${pkgs.stdenv.hostPlatform.system}.myNh
+      mission-center
     ];
 
     system.stateVersion = "26.05";
