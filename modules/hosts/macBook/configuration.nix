@@ -2,10 +2,10 @@
   flake.darwinModules.macBookConfiguration = { config, pkgs, ... }: {
     imports =
       [ 
+        self.sharedModules.cli
+        self.sharedModules.nix
+        self.sharedModules.fonts
       ];
-    fonts.packages = with pkgs; [
-      nerd-fonts.comic-shanns-mono
-    ];
     
     nixpkgs.hostPlatform = "aarch64-darwin";
     system.stateVersion = 6;
@@ -24,11 +24,6 @@
     security.pam.services.sudo_local.touchIdAuth = true;
 
     environment.systemPackages = with pkgs; [
-       helix
-       # self.packages.${pkgs.stdenv.hostPlatform.system}.myKitty
-       self.packages.${pkgs.stdenv.hostPlatform.system}.myNh
-       self.packages.${pkgs.stdenv.hostPlatform.system}.myFastfetch
-       self.packages.${pkgs.stdenv.hostPlatform.system}.myGit
      ];
    };
 }
