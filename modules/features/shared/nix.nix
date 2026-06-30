@@ -1,22 +1,30 @@
 {inputs, self, ...}: {
-  flake.nixosModules.nix = {pkgs, ...}: {
-    imports = [
-      self.nixosModules.nh
-    ];
+  flake.nixosModules.nix = {pkgs, ...}: let
+    selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+  in {
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     nixpkgs.config.allowUnfree = true;
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = [
       # Nix tooling
-      nil
-      nixd
-      statix
-      alejandra
-      manix
-      nix-inspect
-      nvd
-      nix-output-monitor
+      pkgs.nil
+      pkgs.nixd
+      pkgs.statix
+      pkgs.alejandra
+      pkgs.manix
+      pkgs.nix-inspect
+      pkgs.nvd
+      pkgs.nix-output-monitor
+
+      selfpkgs.myNh
     ];
+  };
+
+  perSystem = { pkgs, ... }: {
+    packages.myNh = inputs.wrapper-modules.wrappers.nh.wrap {
+      inherit pkgs;
+      flake = "$HOME/NixOS";
+    };
   };
 }

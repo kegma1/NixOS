@@ -1,32 +1,25 @@
 { inputs, self, ... }: {
-  flake.nixosModules.cli = { pkgs, ... }: {
+  flake.nixosModules.cli = { pkgs, ... }: let
+    selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+  in {
     imports = [
-      self.nixosModules.git
-      self.nixosModules.fastfetch
       self.nixosModules.zsh
-      # self.nixosModules.kitty
     ];
-    environment.systemPackages = with pkgs; [
-      tmux
-      helix
-      htop
-      tree
-      yazi
-      lazygit
-      wget
-      btop
-      ffmpeg-full
-      yt-dlp
+    environment.systemPackages = [
+      pkgs.tmux
+      pkgs.helix
+      pkgs.htop
+      pkgs.tree
+      pkgs.yazi
+      pkgs.lazygit
+      pkgs.wget
+      pkgs.btop
+      pkgs.ffmpeg-full
+      pkgs.yt-dlp
+      pkgs.fzf
+
+      selfpkgs.myGit
+      selfpkgs.myFastfetch
     ];
-  };
-  perSystem = { pkgs, self', ... }: {
-    # packages.terminal = self'.packages.myKitty
-    
-    # packages = with pkgs; [
-    #   tmux
-    #   helix
-    #   htop
-    #   tree
-    # ];
   };
 }

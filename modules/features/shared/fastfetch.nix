@@ -51,22 +51,22 @@
             key = "│ ";
             format = "{name}";
           }
-          {
-            type = "command";
-            key = "│󰢮 ";
-            text = "nvidia-smi --query-gpu=name --format=csv,noheader";
-            format = "{result}";
-            condition = {
-              system = "Linux";
-            };
-          }
+          # {
+          #   type = "command";
+          #   key = "│󰢮 ";
+          #   text = "nvidia-smi --query-gpu=name --format=csv,noheader";
+          #   format = "{result}";
+          #   condition = {
+          #     system = "Linux";
+          #   };
+          # }
           {
             type = "gpu";
             key = "│󰢮 ";
             format = "{name}";
-            condition = {
-              system = "macOS";
-            };
+            # condition = {
+            #   system = "macOS";
+            # };
           }
           {
             type = "memory";

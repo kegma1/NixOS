@@ -130,11 +130,9 @@
     programs.firefox.enable = true;
   
     environment.systemPackages = with pkgs; [
-      # kitty
       alacritty
       localsend
       libva-utils
-      self.packages.${pkgs.stdenv.hostPlatform.system}.myNh
       mission-center
     ];
 
