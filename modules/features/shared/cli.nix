@@ -1,10 +1,7 @@
 { inputs, self, ... }: {
-  flake.nixosModules.cli = { pkgs, ... }: let
+  flake.sharedModules.cli = { pkgs, ... }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
-    imports = [
-      self.nixosModules.zsh
-    ];
     environment.systemPackages = [
       pkgs.tmux
       pkgs.helix

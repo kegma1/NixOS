@@ -8,6 +8,9 @@
       darwinModules = inputs.nixpkgs.lib.mkOption {
         default = {};
       };
+      sharedModules = inputs.nixpkgs.lib.mkOption {
+        default = {};
+      };
     };
   };
 

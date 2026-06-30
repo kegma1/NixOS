@@ -1,5 +1,5 @@
 { inputs, self, ... }: {
-  flake.nixosModules.fonts = { pkgs, ... }: {
+  flake.sharedModules.fonts = { pkgs, ... }: {
     fonts.packages = with pkgs; [
       nerd-fonts.comic-shanns-mono
     ];

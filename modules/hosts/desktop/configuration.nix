@@ -5,14 +5,16 @@
         self.nixosModules.desktopHardware
         self.nixosModules.niri
         self.nixosModules.zen
-        self.nixosModules.cli
         self.nixosModules.discord
-        self.nixosModules.nix
         self.nixosModules.gaming
         self.nixosModules.emulation
         self.nixosModules.gpu-screen-recorder
         self.nixosModules.via-qmk
         self.nixosModules.creative
+
+        self.sharedModules.nix
+        self.sharedModules.cli
+        self.sharedModules.fonts
       ];
 
     # Bootloader.

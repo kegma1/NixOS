@@ -1,5 +1,5 @@
 {inputs, self, ...}: {
-  flake.nixosModules.nix = {pkgs, ...}: let
+  flake.sharedModules.nix = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     nix.settings.experimental-features = ["nix-command" "flakes"];
