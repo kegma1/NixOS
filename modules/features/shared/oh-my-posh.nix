@@ -24,7 +24,12 @@
                 type = "git";
                 background = "#fffdd0";
                 foreground = "#464646";
+                # template = "{{ .UpstreamIcon }} {{ .HEAD }}{{if .Behind }} {{ .Behind }}{{ end }}{{if .Ahead }} {{ .Ahead }}{{ end }} ";
                 template = "{{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ";
+                options = {
+                  fetch_status = true;
+                  fetch_push_status = true;
+                };
               }
             ];
           }

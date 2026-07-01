@@ -128,6 +128,7 @@
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
       ];
+      shell = selfpkgs.myZsh;
     };
     home-manager.users."kennet" = self.homeModules.kennetModule;
   
