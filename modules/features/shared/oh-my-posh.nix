@@ -18,13 +18,13 @@
                 foreground = "#fffdd0";
                 style = "plain";
                 properties.style = "full";
-                template = "{{ .Path }}";
+                template = " {{ .Path }} ";
               }
               {
                 type = "git";
                 background = "#fffdd0";
                 foreground = "#464646";
-                template = " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}";
+                template = "{{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ";
               }
             ];
           }
@@ -32,16 +32,23 @@
             type = "prompt";
             alignment = "right";
             # filler = ".";
-            segments = [{
-              type = "executiontime";
-              style = "plain";
-              template = "{{ .FormattedMs }}";
-              options = {
-                threshold = 500;
-                style = "austin";
-                always_enabled = true;
-              };
-            }];
+            segments = [
+              {
+                type = "executiontime";
+                style = "plain";
+                template = "{{ .FormattedMs }}";
+                options = {
+                  threshold = 500;
+                  style = "austin";
+                  always_enabled = true;
+                };
+              }
+              {
+                type = "time";
+                style = "plain";
+                template = " {{ .Format }} ";
+              }
+            ];
           }
           {
             type = "prompt";
