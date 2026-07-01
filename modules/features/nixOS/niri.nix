@@ -12,7 +12,8 @@
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
           "steam"
-          [ "flatpak" "run" "com.discordapp.Discord" ]
+          "discord"
+          # [ "flatpak" "run" "com.discordapp.Discord" ]
         ];
         input = {
           focus-follows-mouse = _: {
@@ -91,7 +92,8 @@
         binds = {
           "Mod+S".spawn-sh =
             "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-          # "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
+          # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
+          # "Mod+S".spawn-sh = lib.getExe self'.packages.myFuzzel;
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+Q".close-window = _: {};
           
@@ -103,7 +105,8 @@
                   {
                     key = "d";
                     desc = "Discord";
-                    cmd = "flatpak run com.discordapp.Discord";
+                    cmd = "discord";
+                    # cmd = "flatpak run com.discordapp.Discord";
                   }
                   {
                     key = "z";

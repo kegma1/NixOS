@@ -1,6 +1,4 @@
 { lib, self, inputs, ... }: {
-  flake.nixosModules.zsh = {pkgs, ...}: {
-  };
   perSystem = { pkgs, self',  ... }: {
     packages.myZsh = inputs.wrapper-modules.wrappers.zsh.wrap {
       inherit pkgs;
@@ -43,7 +41,7 @@
 
         export PAGER=less
         
-        fastfetch
+        # fastfetch
         
         # Prompt similar to many bash defaults
         # PROMPT='%n@%m:%~\$ '

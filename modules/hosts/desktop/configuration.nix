@@ -1,5 +1,7 @@
 { self, inputs, ... }: {
-  flake.nixosModules.desktopConfiguration = { config, pkgs, ... }: {
+  flake.nixosModules.desktopConfiguration = { config, pkgs, ... }: let
+    selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+  in {
     imports =
       [ 
         self.nixosModules.desktopHardware
@@ -131,11 +133,13 @@
   
     programs.firefox.enable = true;
   
-    environment.systemPackages = with pkgs; [
-      alacritty
-      localsend
-      libva-utils
-      mission-center
+    environment.systemPackages = [
+      pkgs.alacritty
+      pkgs.localsend
+      pkgs.libva-utils
+      pkgs.mission-center
+
+      selfpkgs.myFuzzel
     ];
 
     system.stateVersion = "26.05";

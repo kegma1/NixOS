@@ -1,13 +1,11 @@
 { self, inputs, ... }: {
-  flake.nixosModules.oh-my-posh = {pkgs, ...}: {
-  };
   perSystem = { pkgs, ... }: {
     packages.myOh-my-posh= inputs.wrapper-modules.wrappers.oh-my-posh.wrap {
       inherit pkgs;
       settings = {
-        transient_prompt = {
-          template = " ";
-        };
+        # transient_prompt = {
+        #   template = " ";
+        # };
         blocks = [
           {
             type = "prompt";
@@ -16,22 +14,33 @@
             segments = [
               {
                 type = "path";
+                background = "#464646";
+                foreground = "#fffdd0";
                 style = "plain";
                 properties.style = "full";
                 template = "{{ .Path }}";
               }
               {
                 type = "git";
-                
+                background = "#fffdd0";
+                foreground = "#464646";
+                template = " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}";
               }
             ];
           }
           {
             type = "prompt";
             alignment = "right";
-            filler = ".";
+            # filler = ".";
             segments = [{
-              type = "time";
+              type = "executiontime";
+              style = "plain";
+              template = "{{ .FormattedMs }}";
+              options = {
+                threshold = 500;
+                style = "austin";
+                always_enabled = true;
+              };
             }];
           }
           {
@@ -40,9 +49,9 @@
             alignment = "left";
             segments = [
               {
-                type = "text";
+                type = "os";
                 style = "plain";
-                template = "{{if eq .OS \"darwin\"}}  {{else}}  {{end}}";
+                template = "{{ .Icon }}  ";
               }
             ];
           }
