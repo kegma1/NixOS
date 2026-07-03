@@ -14,6 +14,8 @@
         self.nixosModules.via-qmk
         self.nixosModules.creative
 
+        self.sharedModules.theme
+        
         self.sharedModules.nix
         self.sharedModules.cli
         self.sharedModules.fonts
@@ -133,7 +135,7 @@
     home-manager.users."kennet" = self.homeModules.kennetModule;
   
     programs.firefox.enable = true;
-  
+    
     environment.systemPackages = [
       pkgs.alacritty
       pkgs.localsend
