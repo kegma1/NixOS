@@ -14,7 +14,7 @@
         shell_integration = "enabled";
       };
 
-      themeFile = "GruvboxMaterialDarkSoft";
+      # themeFile = "GruvboxMaterialDarkSoft";
     };
   };
 }

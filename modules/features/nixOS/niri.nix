@@ -95,6 +95,7 @@
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
           # "Mod+S".spawn-sh = lib.getExe self'.packages.myFuzzel;
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};
           
           "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
@@ -124,11 +125,12 @@
           "Mod+C".center-column = _: {};
           "Mod+W".toggle-column-tabbed-display = _: {};
           "Mod+R".switch-preset-column-width = _: {};
+          "Mod+O".toggle-overview = _: {};
 
-          "Mod+H".focus-column-left = _: {};
-          "Mod+L".focus-column-right = _: {};
-          "Mod+K".focus-window-up = _: {};
-          "Mod+J".focus-window-down = _: {};
+          "Mod+H".focus-column-left-or-last = _: {};
+          "Mod+L".focus-column-right-or-first = _: {};
+          "Mod+K".focus-window-or-workspace-up = _: {};
+          "Mod+J".focus-window-or-workspace-down = _: {};
 
           "Mod+Left".focus-column-left = _: {};
           "Mod+Right".focus-column-right = _: {};
