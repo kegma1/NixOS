@@ -146,8 +146,8 @@
 
           "Mod+Shift+H".move-column-left = _: {};
           "Mod+Shift+L".move-column-right = _: {};
-          "Mod+Shift+K".move-window-up = _: {};
-          "Mod+Shift+J".move-window-down = _: {};
+          "Mod+Shift+K".move-window-up-or-to-workspace-up = _: {};
+          "Mod+Shift+J".move-window-down-or-to-workspace-down = _: {};
 
           "Mod+1".focus-workspace = 1;
           "Mod+2".focus-workspace = 2;
