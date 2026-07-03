@@ -139,6 +139,8 @@
       pkgs.localsend
       pkgs.libva-utils
       pkgs.mission-center
+      pkgs.gearlever
+      pkgs.kdePackages.filelight
 
       selfpkgs.myFuzzel
     ];

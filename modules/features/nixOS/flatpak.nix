@@ -6,7 +6,9 @@
         name = "flathub";
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }];
+      packages = [
+        "com.github.tchx84.Flatseal"
+      ];
     };
-
   };
 }
