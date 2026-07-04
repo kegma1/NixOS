@@ -15,6 +15,9 @@
       pkgs.yt-dlp
       pkgs.fzf
 
+      # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
+      pkgs.clang-tools
+
       selfpkgs.myGit
       selfpkgs.myFastfetch
     ];
