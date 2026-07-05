@@ -13,5 +13,27 @@
       desktop = 0.95;
       popups = 1.0;
     };
+
+    stylix.fonts = {
+      serif = {
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka Nerd Font";
+      };
+
+      sansSerif = {
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka Nerd Font";
+      };
+
+      monospace = {
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka Nerd Font Mono";
+      };
+
+      # emoji = {
+      #   package = pkgs.noto-fonts-color-emoji;
+      #   name = "Noto Color Emoji";
+      # };
+    };
   };
 }
