@@ -130,7 +130,6 @@
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
       ];
-      shell = selfpkgs.myZsh;
     };
     home-manager.users."kennet" = self.homeModules.kennetModule;
   
@@ -143,8 +142,7 @@
       pkgs.mission-center
       pkgs.gearlever
       pkgs.kdePackages.filelight
-
-      selfpkgs.myFuzzel
+      pkgs.cava
     ];
 
     system.stateVersion = "26.05";
