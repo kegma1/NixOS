@@ -3,7 +3,7 @@
     "settingsVersion": 59,
     "bar": {
       "barType": "floating",
-      "position": "left",
+      "position": "bottom",
       "monitors": [],
       "density": "default",
       "showOutline": false,
@@ -20,7 +20,7 @@
       "marginHorizontal": 4,
       "frameThickness": 8,
       "frameRadius": 12,
-      "outerCorners": true,
+      "outerCorners": false,
       "hideOnOverview": false,
       "displayMode": "always_visible",
       "autoHideDelay": 500,
@@ -192,7 +192,7 @@
       "showHibernateOnLockScreen": false,
       "enableLockScreenMediaControls": false,
       "enableShadows": true,
-      "enableBlurBehind": true,
+      "enableBlurBehind": false,
       "shadowDirection": "bottom_right",
       "shadowOffsetX": 2,
       "shadowOffsetY": 3,
@@ -238,7 +238,7 @@
       "smoothScrollEnabled": true
     },
     "ui": {
-      "fontDefault": "Iosevka NFP",
+      "fontDefault": "Iosevka NF",
       "fontFixed": "Iosevka Nerd Font Mono",
       "fontDefaultScale": 1.2,
       "fontFixedScale": 1.2,
@@ -285,7 +285,7 @@
     },
     "wallpaper": {
       "enabled": true,
-      "overviewEnabled": false,
+      "overviewEnabled": true,
       "directory": "/home/kennet/Pictures/Wallpapers",
       "monitorDirectories": [],
       "enableMultiMonitorDirectories": false,
@@ -445,7 +445,7 @@
       "disableDesktopWidgets": true
     },
     "dock": {
-      "enabled": true,
+      "enabled": false,
       "position": "bottom",
       "displayMode": "auto_hide",
       "dockType": "attached",

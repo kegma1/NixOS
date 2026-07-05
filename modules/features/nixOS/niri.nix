@@ -84,7 +84,19 @@
           geometry-corner-radius = 12;
           clip-to-geometry = true;
           background-effect.blur = true;
+          background-effect.xray = false;
         };
+
+        layer-rules = [
+          {
+            matches = [{ namespace = "^noctalia-overview*"; }];
+            place-within-backdrop = true;
+          }
+          {
+            matches = [{ namespace = "^noctalia-(background|launcher-overlay|dock)-.*$"; }];
+            background-effect.xray = false;
+          }
+        ];
         
         xwayland-satellite.path =
           lib.getExe pkgs.xwayland-satellite;
@@ -94,6 +106,8 @@
             "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
           # "Mod+S".spawn-sh = lib.getExe self'.packages.myFuzzel;
+          "Mod+P".spawn-sh =
+            "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};
