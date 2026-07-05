@@ -12,11 +12,11 @@
 
           modules-left = [];
           modules-center = ["niri/workspaces"];
-          modules-right = [];
+          modules-right = ["clock"];
           
 
           "niri/workspaces" = {
-            format = "i";
+            format = "";
           };
         };
       };
