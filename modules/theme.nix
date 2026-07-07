@@ -17,12 +17,12 @@
     stylix.fonts = {
       serif = {
         package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka Nerd Font";
+        name = "Iosevka Nerd Font Propo";
       };
 
       sansSerif = {
         package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka Nerd Font";
+        name = "Iosevka Nerd Font Propo";
       };
 
       monospace = {

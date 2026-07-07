@@ -16,6 +16,7 @@
         # background_blur = 5;
         allow_remote_control = "yes";
         shell_integration = "enabled";
+        confirm_os_window_close = 0;
       };
 
       # themeFile = "GruvboxMaterialDarkSoft";
