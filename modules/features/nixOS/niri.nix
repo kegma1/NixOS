@@ -78,6 +78,7 @@
             width = 2;
           };
           shadow.on = _: {};
+          always-center-single-column = _: {};
         };
         
         window-rule = {

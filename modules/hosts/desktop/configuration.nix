@@ -143,6 +143,7 @@
       pkgs.gearlever
       pkgs.kdePackages.filelight
       pkgs.cava
+      pkgs.qutebrowser
     ];
 
     system.stateVersion = "26.05";

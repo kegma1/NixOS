@@ -13,13 +13,6 @@
             alignment = "left";
             segments = [
               {
-                type = "nix-shell";
-                style = "plain";
-                background = "#464646";
-                foreground = "#fffdd0";
-                template = "[󱄅]";
-              }
-              {
                 type = "path";
                 background = "#464646";
                 foreground = "#fffdd0";
