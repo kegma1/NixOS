@@ -7,7 +7,15 @@
       enable = true;    
       settings = {
         editor = {
+          bufferline = "multiple";
+          soft-wrap.enable = true;
+          auto-save.after-delay.enable = true;
           line-number = "relative";
+          cursor-shape = {
+            normal =  "block";
+            insert = "bar";
+            select = "underline";
+          };
         };
         keys = {
           normal = {

@@ -14,6 +14,7 @@
       pkgs.ffmpeg-full
       pkgs.yt-dlp
       pkgs.fzf
+      pkgs.bat
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
