@@ -23,6 +23,7 @@
         ll = "ls -lh";
         la = "ls -A";
         l = "ls -CF";
+        h = "hx .";
       };
 
       initContent = ''
