@@ -46,6 +46,8 @@
     services.desktopManager.gnome.enable = true;
 
     programs.coolercontrol.enable = true;
+
+    programs.nix-index-database.comma.enable = true;
    
     fileSystems."/mnt/ssd1" = {
       device = "/dev/disk/by-uuid/2d7e27ad-e4dd-47c4-a53e-d807265d083d";

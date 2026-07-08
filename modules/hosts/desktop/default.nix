@@ -3,6 +3,7 @@
     modules = [
       inputs.nix-flatpak.nixosModules.nix-flatpak
       inputs.stylix.nixosModules.stylix
+      inputs.nix-index-database.nixosModules.default
       self.nixosModules.desktopConfiguration
       self.nixosModules.myHomeManager
      ];
