@@ -11,6 +11,7 @@
           soft-wrap.enable = true;
           auto-save.after-delay.enable = true;
           line-number = "relative";
+          mouse = true;
           cursor-shape = {
             normal =  "block";
             insert = "bar";
