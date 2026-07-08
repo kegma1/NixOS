@@ -103,10 +103,10 @@
           lib.getExe pkgs.xwayland-satellite;
 
         binds = {
-          "Mod+S".spawn-sh =
-            "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+          # "Mod+S".spawn-sh =
+          #   "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
-          # "Mod+S".spawn-sh = lib.getExe self'.packages.myFuzzel;
+          "Mod+S".spawn-sh = "pkill fuzzel || fuzzel";
           "Mod+P".spawn-sh =
             "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
