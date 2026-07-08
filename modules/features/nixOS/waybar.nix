@@ -7,16 +7,34 @@
       settings = {
         mainbar = {
           layer = "top";
-          position = "left";
+          position = "top";
           width = 1000;
 
           modules-left = ["custom/icon" "cava"];
           modules-center = ["clock" "niri/workspaces" "clock#date"];
-          modules-right = ["pulsaudio" "newtwork" "tray"];
+          modules-right = ["pulseaudio" "newtwork" "tray"];
           
 
+          "clock" = {
+            format = "{:%H\n%M}";
+          };
+          "clock#date" = {
+            format = "{:%d日\n%m月}";
+          };
           "niri/workspaces" = {
-            format = "";
+            format = "{icon}";
+            format-icons = {
+              "1"  = "一";
+              "2"  = "二";
+              "3"  = "三";
+              "4"  = "四";
+              "5"  = "五";
+              "6"  = "六";
+              "7"  = "七";
+              "8"  = "八";
+              "9"  = "九";
+              "10" = "十";
+            };
           };
           "cava" = {
           	# "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
