@@ -144,6 +144,7 @@
       pkgs.kdePackages.filelight
       pkgs.cava
       pkgs.qutebrowser
+      pkgs.solaar
     ];
 
     system.stateVersion = "26.05";
