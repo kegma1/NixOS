@@ -4,7 +4,7 @@
       self.homeModules.kitty
       self.homeModules.waybar
       self.homeModules.fuzzel
-      self.homeModules.helix
+      self.homeModules.cli
     ];
 
     qt.enable = true;

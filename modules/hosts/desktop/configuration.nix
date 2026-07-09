@@ -17,7 +17,7 @@
         self.sharedModules.theme
         
         self.sharedModules.nix
-        self.sharedModules.cli
+        # self.sharedModules.cli
         self.sharedModules.fonts
       ];
 

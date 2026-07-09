@@ -54,9 +54,9 @@
           	noise_reduction = 0.17;
           	input_delay = 2;
           	format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ] ;
-          	actions = {
-          		on-click-right = "mode";
-          	};
+          	# actions = {
+          	# 	on-click-right = "mode";
+          	# };
           };
           "custom/icon" = {
             format = " ";

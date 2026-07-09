@@ -1,10 +1,12 @@
 { inputs, self, ... }: {
-  flake.sharedModules.cli = { pkgs, ... }: let
+  flake.homeModules.cli = { pkgs, ... }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
-    environment.systemPackages = [
+    imports = [
+      self.homeModules.helix
+    ];
+    home.packages = [
       pkgs.tmux
-      pkgs.helix
       pkgs.htop
       pkgs.tree
       pkgs.yazi
@@ -22,5 +24,12 @@
       selfpkgs.myGit
       selfpkgs.myFastfetch
     ];
+
+    programs.eza = {
+      enable = true;
+      enableZshIntegration = true;
+      icons = "auto";
+      git = true;
+    };
   };
 }
