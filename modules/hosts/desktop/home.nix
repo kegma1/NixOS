@@ -7,6 +7,7 @@
       self.homeModules.helix
     ];
 
+    qt.enable = true;
     home.stateVersion = "24.11";
   };
 

@@ -16,10 +16,10 @@
           
 
           "clock" = {
-            format = "{:%H\n%M}";
+            format = "{:%H:%M}";
           };
           "clock#date" = {
-            format = "{:%d日\n%m月}";
+            format = "{:%d日%m月}";
           };
           "niri/workspaces" = {
             format = "{icon}";

@@ -81,12 +81,22 @@
           always-center-single-column = _: {};
         };
         
-        window-rule = {
-          geometry-corner-radius = 12;
-          clip-to-geometry = true;
-          background-effect.blur = true;
-          background-effect.xray = false;
-        };
+        window-rules = [
+          {
+            geometry-corner-radius = 12;
+            clip-to-geometry = true;
+            background-effect.blur = true;
+            background-effect.xray = false;
+          }
+          {
+            matches = [{ app-id = "steam"; title = "^notificationtoasts_\d+_desktop$"; }];
+            default-floating-position = _: { props = {
+                x = 10; y = 10;
+                relative-to="bottom-right";
+              };
+            };
+          }          
+        ];
 
         layer-rules = [
           {
