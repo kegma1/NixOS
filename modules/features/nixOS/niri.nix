@@ -112,27 +112,28 @@
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};
+          "Mod+Z".spawn-sh = "app.zen_browser.zen";
           
-          "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
-              inherit pkgs;
-              settings = {
-                anchor = "center";
-                menu = [
-                  {
-                    key = "d";
-                    desc = "Discord";
-                    cmd = "discord";
-                    # cmd = "flatpak run com.discordapp.Discord";
-                  }
-                  {
-                    key = "z";
-                    desc = "Zen";
-                    cmd = "flatpak run app.zen_browser.zen";
-                  }
-                ];
-              };
-            }
-          );                    
+          # "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
+          #     inherit pkgs;
+          #     settings = {
+          #       anchor = "center";
+          #       menu = [
+          #         {
+          #           key = "d";
+          #           desc = "Discord";
+          #           cmd = "discord";
+          #           # cmd = "flatpak run com.discordapp.Discord";
+          #         }
+          #         {
+          #           key = "z";
+          #           desc = "Zen";
+          #           cmd = "flatpak run app.zen_browser.zen";
+          #         }
+          #       ];
+          #     };
+          #   }
+          # );                    
           "Mod+F".maximize-column = _: {};
           "Mod+G".fullscreen-window = _: {};
           "Mod+Shift+F".toggle-window-floating = _: {};
