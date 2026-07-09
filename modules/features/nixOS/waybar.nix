@@ -2,6 +2,7 @@
   flake.homeModules.waybar = { pkgs,  ... }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in  {
+    stylix.targets.waybar.addCss = false;
     programs.waybar = {
       enable = true;    
       settings = {
@@ -64,10 +65,9 @@
           	format-ethernet = "󰈀 ";
           	format-disconnected = " ";
           	tooltip-format = "{ifname}";
-          	tooltip-format-wifi = "{essid} ({signalStrength}%)  ";
-          	tooltip-format-ethernet = "{ifname}:{ipaddr} ({bandwidthUp}{bandwidthDown}) 󰈀 ";
+          	tooltip-format-wifi = "{essid} ({signalStrength}%)";
+          	tooltip-format-ethernet = "{ifname}:{ipaddr} ({bandwidthUpBits}↑{bandwidthDownBits}↓)";
           	tooltip-format-disconnected = "Disconnected";
-          	max-length = 50;
           };
           "custom/icon" = {
             format = " ";
