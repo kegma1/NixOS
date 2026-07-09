@@ -20,10 +20,12 @@
       };
 
       shellAliases = {
+        ls = "eza";
         ll = "ls -lh";
         la = "ls -A";
         l = "ls -CF";
         h = "hx .";
+        lg = "lazygit";
       };
 
       initContent = ''
