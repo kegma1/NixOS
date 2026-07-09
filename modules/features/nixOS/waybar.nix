@@ -12,14 +12,14 @@
 
           modules-left = ["custom/icon" "cava"];
           modules-center = ["clock" "niri/workspaces" "clock#date"];
-          modules-right = ["pulseaudio" "newtwork" "tray"];
+          modules-right = ["pulseaudio" "network" ];
           
 
           "clock" = {
-            format = "{:%H:%M}";
+            format = "{:%H時%M分}";
           };
           "clock#date" = {
-            format = "{:%d日%m月}";
+            format = "{:%m月%d日}";
           };
           "niri/workspaces" = {
             format = "{icon}";
@@ -57,6 +57,17 @@
           	# actions = {
           	# 	on-click-right = "mode";
           	# };
+          };
+          "network" = {
+          	format = "";
+          	format-wifi = " ";
+          	format-ethernet = "󰈀 ";
+          	format-disconnected = " ";
+          	tooltip-format = "{ifname}";
+          	tooltip-format-wifi = "{essid} ({signalStrength}%)  ";
+          	tooltip-format-ethernet = "{ifname}:{ipaddr} ({bandwidthUp}{bandwidthDown}) 󰈀 ";
+          	tooltip-format-disconnected = "Disconnected";
+          	max-length = 50;
           };
           "custom/icon" = {
             format = " ";
