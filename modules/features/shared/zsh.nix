@@ -2,11 +2,6 @@
   flake.homeModules.zsh = { pkgs,  ... }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in  {
-    programs.fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-    
     programs.zsh = {
       enable = true;
 
@@ -23,7 +18,7 @@
         ls = "eza";
         ll = "ls -lh";
         la = "ls -A";
-        l = "ls -CF";
+        l = "ls";
         h = "hx .";
         lg = "lazygit";
       };

@@ -25,6 +25,11 @@
       selfpkgs.myFastfetch
     ];
 
+    programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    
     programs.eza = {
       enable = true;
       enableZshIntegration = true;
