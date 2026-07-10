@@ -1,11 +1,16 @@
-{ lib, self, inputs,  ... }: {
-  flake.homeModules.zsh = { pkgs,  ... }: let
+{
+  lib,
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.zsh = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
-  in  {
+  in {
     programs.zsh = {
       enable = true;
 
-       history = {
+      history = {
         path = "$HOME/.zsh_history";
         size = 10000;
         save = 10000;
@@ -47,7 +52,6 @@
           eval "$(${lib.getExe selfpkgs.myOh-my-posh} init zsh)"
         fi
       '';
-      
     };
   };
 }

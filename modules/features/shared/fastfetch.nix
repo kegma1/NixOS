@@ -1,5 +1,9 @@
-{ self, inputs, ... }: {
-  perSystem = { pkgs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  perSystem = {pkgs, ...}: {
     packages.myFastfetch = inputs.wrapper-modules.wrappers.fastfetch.wrap {
       inherit pkgs;
       settings = {
@@ -29,7 +33,7 @@
             type = "os";
             key = "│ ";
             condition = {
-            system = "macOS";
+              system = "macOS";
             };
             format = "{pretty-name}";
           }
@@ -87,7 +91,6 @@
             type = "colors";
             symbol = "circle";
           }
-          
         ];
       };
     };

@@ -1,5 +1,10 @@
-{ inputs, self, lib, ... }: {
-  flake.sharedModules.theme = { pkgs, ... }: let
+{
+  inputs,
+  self,
+  lib,
+  ...
+}: {
+  flake.sharedModules.theme = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     stylix.enable = true;

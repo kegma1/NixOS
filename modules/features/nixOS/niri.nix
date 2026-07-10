@@ -1,11 +1,24 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.niri = { pkgs, lib, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.niri = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.niri = {
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
     };
   };
-  perSystem = { pkgs, lib, self',  ... }: {
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
@@ -17,7 +30,7 @@
         ];
         input = {
           focus-follows-mouse = _: {
-           props.max-scroll-amount = "0%";
+            props.max-scroll-amount = "0%";
           };
 
           keyboard = {
@@ -42,19 +55,18 @@
         outputs = {
           "DP-1" = {
             mode = "2560x1440@164.999";
-            position = _:  {
+            position = _: {
               props = {
                 x = 3440;
                 y = 0;
               };
             };
-          };     
+          };
 
-          
           "DP-2" = {
             focus-at-startup = _: {};
             mode = "3440x1440@174.962";
-            position = _:  {
+            position = _: {
               props = {
                 x = 0;
                 y = 0;
@@ -69,18 +81,18 @@
         layout = {
           gaps = 10;
           preset-column-widths = [
-            { proportion = 0.5; }
-            { proportion = 0.666667; }
-            { proportion = 0.333333; }
+            {proportion = 0.5;}
+            {proportion = 0.666667;}
+            {proportion = 0.333333;}
           ];
-          focus-ring =  {
+          focus-ring = {
             active-color = "#fe8019";
             width = 2;
           };
           shadow.on = _: {};
           always-center-single-column = _: {};
         };
-        
+
         window-rules = [
           {
             geometry-corner-radius = 12;
@@ -89,26 +101,33 @@
             background-effect.xray = false;
           }
           {
-            matches = [{ app-id = "steam"; title = "^notificationtoasts_\d+_desktop$"; }];
-            default-floating-position = _: { props = {
-                x = 10; y = 10;
-                relative-to="bottom-right";
+            matches = [
+              {
+                app-id = "steam";
+                title = "^notificationtoasts_\d+_desktop$";
+              }
+            ];
+            default-floating-position = _: {
+              props = {
+                x = 10;
+                y = 10;
+                relative-to = "bottom-right";
               };
             };
-          }          
+          }
         ];
 
         layer-rules = [
           {
-            matches = [{ namespace = "^noctalia-overview*"; }];
+            matches = [{namespace = "^noctalia-overview*";}];
             place-within-backdrop = true;
           }
           {
-            matches = [{ namespace = "^noctalia-(background|launcher-overlay|dock)-.*$"; }];
+            matches = [{namespace = "^noctalia-(background|launcher-overlay|dock)-.*$";}];
             background-effect.xray = false;
           }
         ];
-        
+
         xwayland-satellite.path =
           lib.getExe pkgs.xwayland-satellite;
 
@@ -117,13 +136,12 @@
           #   "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
           "Mod+S".spawn-sh = "pkill fuzzel || fuzzel";
-          "Mod+P".spawn-sh =
-            "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
+          "Mod+P".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};
           "Mod+Z".spawn-sh = "app.zen_browser.zen";
-          
+
           # "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
           #     inherit pkgs;
           #     settings = {
@@ -143,7 +161,7 @@
           #       ];
           #     };
           #   }
-          # );                    
+          # );
           "Mod+F".maximize-column = _: {};
           "Mod+G".fullscreen-window = _: {};
           "Mod+Shift+F".toggle-window-floating = _: {};

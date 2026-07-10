@@ -1,5 +1,5 @@
-{ self, ...}: {
-  flake.nixosModules.discord = { pkgs, ... }: {
+{self, ...}: {
+  flake.nixosModules.discord = {pkgs, ...}: {
     imports = [
       self.nixosModules.flatpak
     ];
@@ -7,7 +7,7 @@
       pkgs.discord
     ];
     services.flatpak.packages = [
-       "com.discordapp.Discord"
+      "com.discordapp.Discord"
     ];
   };
 }

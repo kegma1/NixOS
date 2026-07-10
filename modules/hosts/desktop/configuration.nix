@@ -1,46 +1,53 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.desktopConfiguration = { config, pkgs, ... }: let
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.desktopConfiguration = {
+    config,
+    pkgs,
+    ...
+  }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
-    imports =
-      [ 
-        self.nixosModules.desktopHardware
-        self.nixosModules.niri
-        self.nixosModules.zen
-        self.nixosModules.discord
-        self.nixosModules.gaming
-        self.nixosModules.emulation
-        self.nixosModules.gpu-screen-recorder
-        self.nixosModules.via-qmk
-        self.nixosModules.creative
+    imports = [
+      self.nixosModules.desktopHardware
+      self.nixosModules.niri
+      self.nixosModules.zen
+      self.nixosModules.discord
+      self.nixosModules.gaming
+      self.nixosModules.emulation
+      self.nixosModules.gpu-screen-recorder
+      self.nixosModules.via-qmk
+      self.nixosModules.creative
 
-        self.sharedModules.theme
-        
-        self.sharedModules.nix
-        # self.sharedModules.cli
-        self.sharedModules.fonts
-      ];
+      self.sharedModules.theme
+
+      self.sharedModules.nix
+      # self.sharedModules.cli
+      self.sharedModules.fonts
+    ];
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.kernelParams = [ "quiet" ];
+    boot.kernelParams = ["quiet"];
     boot.plymouth.enable = true;
-  
-    networking.hostName = "desktop"; 
-  
+
+    networking.hostName = "desktop";
+
     # Enable networking
     networking.networkmanager.enable = true;
-  
+
     # Set your time zone.
     time.timeZone = "Europe/Oslo";
-  
+
     # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
-  
+
     # Enable the X11 windowing system.
     services.xserver.enable = true;
-  
+
     # Enable the GNOME Desktop Environment.
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
@@ -48,7 +55,7 @@
     programs.coolercontrol.enable = true;
 
     programs.nix-index-database.comma.enable = true;
-   
+
     fileSystems."/mnt/ssd1" = {
       device = "/dev/disk/by-uuid/2d7e27ad-e4dd-47c4-a53e-d807265d083d";
       fsType = "btrfs";
@@ -64,7 +71,6 @@
     programs.appimage.enable = true;
     programs.appimage.binfmt = true;
 
-
     xdg.portal = {
       enable = true;
       xdgOpenUsePortal = true;
@@ -73,39 +79,39 @@
         pkgs.xdg-desktop-portal-gnome
       ];
       config = {
-        common.default = [ "gtk" "gnome" ];
+        common.default = ["gtk" "gnome"];
       };
     };
 
     hardware.graphics.enable = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.nvidia.open = true;  # see the note above
+    services.xserver.videoDrivers = ["nvidia"];
+    hardware.nvidia.open = true; # see the note above
     hardware.cpu.amd.updateMicrocode = true;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
-  
+
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "no";
       variant = "";
     };
-  
+
     # Configure console keymap
     console.keyMap = "no";
-  
+
     # Enable CUPS to print documents.
     services.printing = {
       enable = true;
-      drivers = with pkgs; [ gutenprint hplip splix cups-filters cups-browsed ];
+      drivers = with pkgs; [gutenprint hplip splix cups-filters cups-browsed];
     };
     services.avahi = {
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
     };
-  
+
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -116,27 +122,27 @@
       pulse.enable = true;
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
-  
+
       # use the example session manager (no others are packaged yet so this is enabled by default,
       # no need to redefine it in your config for now)
       #media-session.enable = true;
     };
-  
+
     # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
-  
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users."kennet" = {
       isNormalUser = true;
       description = "Kennet";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
       ];
     };
     home-manager.users."kennet" = self.homeModules.kennetModule;
-  
+
     programs.firefox.enable = true;
-    
+
     environment.systemPackages = [
       pkgs.alacritty
       pkgs.localsend
@@ -150,5 +156,5 @@
     ];
 
     system.stateVersion = "26.05";
-   };
+  };
 }

@@ -1,15 +1,19 @@
-
-{ lib, self, inputs,  ... }: {
-  flake.homeModules.helix = { pkgs,  ... }: let
+{
+  lib,
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.helix = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
-  in  {
+  in {
     programs.helix = {
-      enable = true;    
+      enable = true;
       languages = {
         language = [
           {
             name = "nix";
-            language-servers = [ "nixd" ];
+            language-servers = ["nixd"];
           }
         ];
 
@@ -18,10 +22,9 @@
 
           config = {
             nixd = {
-              formatting.command = [ "alejandra" ];
+              formatting.command = ["alejandra"];
 
-              nixpkgs.expr =
-                "import (builtins.getFlake (toString ./.)).inputs.nixpkgs { }";
+              nixpkgs.expr = "import (builtins.getFlake (toString ./.)).inputs.nixpkgs { }";
             };
           };
         };
@@ -34,7 +37,7 @@
           line-number = "relative";
           mouse = true;
           cursor-shape = {
-            normal =  "block";
+            normal = "block";
             insert = "bar";
             select = "underline";
           };
@@ -45,9 +48,9 @@
               "collapse_selection"
               "keep_primary_selection"
             ];
-            "C-g" = [ ":new" ":insert-output lazygit" ":buffer-close!" ":redraw" ];
+            "C-g" = [":new" ":insert-output lazygit" ":buffer-close!" ":redraw"];
           };
-        }; 
+        };
       };
     };
   };

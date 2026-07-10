@@ -1,7 +1,12 @@
-{ lib, self, inputs,  ... }: {
-  flake.homeModules.fuzzel = { pkgs,  ... }: let
+{
+  lib,
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.fuzzel = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
-  in  {
+  in {
     programs.fuzzel.enable = true;
   };
 }

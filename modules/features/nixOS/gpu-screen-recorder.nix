@@ -1,5 +1,9 @@
-{ inputs, self, ... }: {
-  flake.nixosModules.gpu-screen-recorder = { pkgs, ... }: {
+{
+  inputs,
+  self,
+  ...
+}: {
+  flake.nixosModules.gpu-screen-recorder = {pkgs, ...}: {
     programs.gpu-screen-recorder.enable = true;
 
     environment.systemPackages = with pkgs; [

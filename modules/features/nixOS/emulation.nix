@@ -1,5 +1,9 @@
-{ inputs, self, ... }: {
-  flake.nixosModules.emulation = { pkgs, ... }: {
+{
+  inputs,
+  self,
+  ...
+}: {
+  flake.nixosModules.emulation = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       dolphin-emu
       parallel-launcher

@@ -1,21 +1,28 @@
-{ self, inputs, ... }: {
-  flake.darwinModules.macBookConfiguration = { config, pkgs, ... }: {
-    imports =
-      [ 
-        # self.sharedModules.cli
-        self.sharedModules.nix
-        self.sharedModules.fonts
-        self.sharedModules.theme
-      ];
-    
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.darwinModules.macBookConfiguration = {
+    config,
+    pkgs,
+    ...
+  }: {
+    imports = [
+      # self.sharedModules.cli
+      self.sharedModules.nix
+      self.sharedModules.fonts
+      self.sharedModules.theme
+    ];
+
     nixpkgs.hostPlatform = "aarch64-darwin";
     system.stateVersion = 6;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     nixpkgs.config.allowUnfree = true;
-    networking.hostName = "macBook"; 
-  
+    networking.hostName = "macBook";
+
     time.timeZone = "Europe/Oslo";
     users.users."kennetmathisen" = {
       name = "kennetmathisen";
@@ -29,8 +36,7 @@
       remapCapsLockToEscape = true;
     };
 
-
     environment.systemPackages = with pkgs; [
-     ];
-   };
+    ];
+  };
 }

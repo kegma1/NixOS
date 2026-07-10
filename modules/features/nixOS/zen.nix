@@ -1,4 +1,4 @@
-{ self, ... }: {
+{self, ...}: {
   flake.nixosModules.zen = {...}: {
     imports = [
       self.nixosModules.flatpak

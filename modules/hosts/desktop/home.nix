@@ -1,5 +1,9 @@
-{ self, inputs, ... }: {
-  flake.homeModules.kennetModule = { pkgs, ... }: {
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.kennetModule = {pkgs, ...}: {
     imports = [
       self.homeModules.kitty
       self.homeModules.waybar
@@ -10,5 +14,4 @@
     qt.enable = true;
     home.stateVersion = "24.11";
   };
-
 }

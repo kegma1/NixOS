@@ -1,5 +1,9 @@
-{ inputs, self, ... }: {
-  flake.homeModules.cli = { pkgs, ... }: let
+{
+  inputs,
+  self,
+  ...
+}: {
+  flake.homeModules.cli = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     imports = [
@@ -29,7 +33,7 @@
       enable = true;
       enableZshIntegration = true;
     };
-    
+
     programs.eza = {
       enable = true;
       enableZshIntegration = true;

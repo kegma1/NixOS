@@ -1,4 +1,8 @@
-{inputs, self, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.sharedModules.nix = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
@@ -21,7 +25,7 @@
     ];
   };
 
-  perSystem = { pkgs, ... }: {
+  perSystem = {pkgs, ...}: {
     packages.myNh = inputs.wrapper-modules.wrappers.nh.wrap {
       inherit pkgs;
       flake = "$HOME/NixOS";

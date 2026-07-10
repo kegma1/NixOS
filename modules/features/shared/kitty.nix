@@ -1,10 +1,15 @@
-{ lib, self, inputs, ... }: {
+{
+  lib,
+  self,
+  inputs,
+  ...
+}: {
   flake.homeModules.kitty = {pkgs, ...}: {
     imports = [
       self.homeModules.zsh
     ];
-      
-      programs.kitty = {
+
+    programs.kitty = {
       enable = true;
 
       settings = {
