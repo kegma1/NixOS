@@ -2,9 +2,10 @@
   flake.darwinModules.macBookConfiguration = { config, pkgs, ... }: {
     imports =
       [ 
-        self.sharedModules.cli
+        # self.sharedModules.cli
         self.sharedModules.nix
         self.sharedModules.fonts
+        self.sharedModules.theme
       ];
     
     nixpkgs.hostPlatform = "aarch64-darwin";
