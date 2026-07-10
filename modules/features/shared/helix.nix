@@ -5,6 +5,27 @@
   in  {
     programs.helix = {
       enable = true;    
+      languages = {
+        language = [
+          {
+            name = "nix";
+            language-servers = [ "nixd" ];
+          }
+        ];
+
+        language-server.nixd = {
+          command = "nixd";
+
+          config = {
+            nixd = {
+              formatting.command = [ "alejandra" ];
+
+              nixpkgs.expr =
+                "import (builtins.getFlake (toString ./.)).inputs.nixpkgs { }";
+            };
+          };
+        };
+      };
       settings = {
         editor = {
           bufferline = "multiple";

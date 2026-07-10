@@ -5,7 +5,7 @@
     stylix.targets.waybar.addCss = false;
     programs.waybar = {
       enable = true;    
-      style = lib.mkAfter ''
+      style = lib.mkAfter /*css*/ ''
           * {
             all: unset;
             font-family: "Iosevka Nerd Font Propo", monospace;
