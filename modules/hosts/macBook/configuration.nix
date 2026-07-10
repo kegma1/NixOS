@@ -24,6 +24,12 @@
     home-manager.users."kennetmathisen" = self.homeModules.kennetmathisenModule;
     security.pam.services.sudo_local.touchIdAuth = true;
 
+    system.keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
+    };
+
+
     environment.systemPackages = with pkgs; [
      ];
    };
