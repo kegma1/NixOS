@@ -15,9 +15,9 @@
           config = {
             nixd = {
               options = {
-                nix-darwin.expr = ''(builtins.getFlake (toString ./.)).darwinConfigurations."kennetmathisen".options'';
+                nix-darwin.expr = ''(builtins.getFlake (toString ./.)).darwinConfigurations."macBook".options'';
 
-                home-manager.expr = ''(builtins.getFlake (toString ./.)).darwinConfigurations."kennetmathisen".options.home-manager.users.type.getSubOptions []'';
+                home-manager.expr = ''(builtins.getFlake (toString ./.)).darwinConfigurations."macBook".options.home-manager.users.type.getSubOptions []'';
               };
             };
           };
