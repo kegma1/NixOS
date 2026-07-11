@@ -11,6 +11,10 @@
       self.homeModules.cli
     ];
 
+    programs.helix.languages.language-server.nixd.config.nixd.options = {
+      home-manager.expr = ''(builtins.getFlake (toString ./.)).darwinConfigurations."desktop".options.home-manager.users.type.getSubOptions []'';
+    };
+
     qt.enable = true;
     home.stateVersion = "24.11";
   };

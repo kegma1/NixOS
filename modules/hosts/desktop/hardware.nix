@@ -46,6 +46,16 @@
       {device = "/dev/disk/by-uuid/485a1195-1c8f-4733-bac5-b51604cef59b";}
     ];
 
+    fileSystems."/mnt/ssd1" = {
+      device = "/dev/disk/by-uuid/2d7e27ad-e4dd-47c4-a53e-d807265d083d";
+      fsType = "btrfs";
+    };
+
+    fileSystems."/mnt/m2_1tb" = {
+      device = "/dev/disk/by-uuid/5335522b-f978-47a1-adf7-9052901bb3a4";
+      fsType = "ext4";
+    };
+
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
