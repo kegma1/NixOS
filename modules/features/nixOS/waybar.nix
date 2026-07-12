@@ -28,24 +28,31 @@
             opacity: 0.99;
           }
 
+          #cava {
+            padding: 0 4px;
+          }
+
           #workspaces {
-            min-width: 100px;
-            padding: 2px 4px;
-            margin: 11px 0;
-            border-radius: 10px;
+            padding: 4px;
+            margin: 5px 2px;
+          }
+
+          #workspaces button:first-child {
+            border-radius: 10px 0 0 10px;
+          }
+
+          #workspaces button:last-child {
+            border-radius: 0 10px 10px 0;
           }
 
           #workspaces button {
-            background-color: @base04;
-            padding: 0px 5px;
-            border-radius: 10px;
-            margin: 0 2px;
-            min-width: 4px;
+            background-color: @base01;
+            padding: 0 5px;
           }
 
           #workspaces button.active {
-            background-color: @base0D;
-            min-width: 1.4rem;
+            background-color: @base05;
+            color: @base01;
             transition: none;
           }
 
@@ -68,10 +75,10 @@
         mainbar = {
           layer = "top";
           position = "top";
-          width = 1000;
+          width = 2000;
 
-          modules-left = ["custom/icon" "cava"];
-          modules-center = ["clock" "niri/workspaces" "clock#date"];
+          modules-left = ["custom/icon" "niri/workspaces"];
+          modules-center = ["clock" "cava" "clock#date"];
           modules-right = ["pulseaudio" "network"];
 
           "clock" = {
