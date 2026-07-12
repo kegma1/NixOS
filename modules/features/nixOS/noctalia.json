@@ -3,7 +3,7 @@
     "settingsVersion": 59,
     "bar": {
       "barType": "floating",
-      "position": "bottom",
+      "position": "left",
       "monitors": [],
       "density": "default",
       "showOutline": false,
@@ -29,13 +29,13 @@
       "widgets": {
         "left": [
           {
-            "colorizeDistroLogo": false,
             "colorizeSystemIcon": "none",
             "colorizeSystemText": "none",
             "customIconPath": "",
             "enableColorization": true,
-            "icon": "noctalia",
-            "id": "ControlCenter",
+            "icon": "rocket",
+            "iconColor": "none",
+            "id": "Launcher",
             "useDistroLogo": true
           },
           {
@@ -79,7 +79,7 @@
         ],
         "center": [
           {
-            "characterCount": 2,
+            "characterCount": 1,
             "colorizeIcons": false,
             "emptyColor": "secondary",
             "enableScrollWheel": true,
@@ -87,7 +87,7 @@
             "followFocusedScreen": false,
             "fontWeight": "bold",
             "groupedBorderOpacity": 1,
-            "hideUnoccupied": false,
+            "hideUnoccupied": true,
             "iconScale": 0.8,
             "id": "Workspace",
             "labelMode": "none",
@@ -142,16 +142,6 @@
             "textColor": "none"
           },
           {
-            "colorizeSystemIcon": "none",
-            "colorizeSystemText": "none",
-            "customIconPath": "",
-            "enableColorization": false,
-            "icon": "rocket",
-            "iconColor": "none",
-            "id": "Launcher",
-            "useDistroLogo": false
-          },
-          {
             "clockColor": "none",
             "customFont": "",
             "formatHorizontal": "HH:mm ddd, MMM dd",
@@ -159,6 +149,10 @@
             "id": "Clock",
             "tooltipFormat": "HH:mm ddd, MMM dd",
             "useCustomFont": false
+          },
+          {
+            "iconColor": "error",
+            "id": "SessionMenu"
           }
         ]
       },
@@ -600,7 +594,7 @@
       "volumeStep": 5,
       "volumeOverdrive": false,
       "spectrumFrameRate": 30,
-      "visualizerType": "linear",
+      "visualizerType": "wave",
       "spectrumMirrored": true,
       "mprisBlacklist": [],
       "preferredPlayer": "",
