@@ -6,6 +6,7 @@
   flake.nixosModules.niri = {
     pkgs,
     lib,
+    config,
     ...
   }: {
     programs.niri = {
@@ -87,9 +88,13 @@
             {proportion = 0.666667;}
             {proportion = 0.333333;}
           ];
-          focus-ring = {
-            active-color = "#fe8019";
+          focus-ring.off = _: {};
+
+          border = {
+            on = _: {};
             width = 2;
+            active-color = "#83a598";
+            inactive-color = "#504945";
           };
           shadow.on = _: {};
           # always-center-single-column = _: {};
