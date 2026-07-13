@@ -24,7 +24,6 @@
           window#waybar {
             background-color: alpha(@base00, 0.99);
             color: @base05;
-            border-radius: 0 0 10px 10px;
             opacity: 0.99;
           }
 
@@ -32,21 +31,16 @@
             padding: 0 4px;
           }
 
+          #custom-icon {
+            font-weight: 700;
+            font-size: 1.12rem;
+          }
+
           #workspaces {
-            padding: 4px;
-            margin: 5px 2px;
-          }
-
-          #workspaces button:first-child {
-            border-radius: 10px 0 0 10px;
-          }
-
-          #workspaces button:last-child {
-            border-radius: 0 10px 10px 0;
+            padding: 0 4px;
           }
 
           #workspaces button {
-            background-color: @base01;
             padding: 0 5px;
           }
 
@@ -75,11 +69,10 @@
         mainbar = {
           layer = "top";
           position = "top";
-          width = 2000;
 
           modules-left = ["custom/icon" "niri/workspaces"];
           modules-center = ["clock" "cava" "clock#date"];
-          modules-right = ["pulseaudio" "network"];
+          modules-right = ["pulseaudio" "cpu" "memory" "network"];
 
           "clock" = {
             format = "{:%H時%M分}";
@@ -89,16 +82,18 @@
           };
           "niri/workspaces" = {
             format = "{icon}";
+            display-condition = "only-populated";
+            enable-bar-scroll = true;
             format-icons = {
-              "1" = "一";
-              "2" = "二";
-              "3" = "三";
-              "4" = "四";
-              "5" = "五";
-              "6" = "六";
-              "7" = "七";
-              "8" = "八";
-              "9" = "九";
+              "1"  = "一";
+              "2"  = "二";
+              "3"  = "三";
+              "4"  = "四";
+              "5"  = "五";
+              "6"  = "六";
+              "7"  = "七";
+              "8"  = "八";
+              "9"  = "九";
               "10" = "十";
             };
           };
@@ -136,6 +131,16 @@
           };
           "custom/icon" = {
             format = " ";
+          };
+          "cpu" = {
+          	interval = 1;
+          	format = "  ";
+          	format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          };
+          "memory" = {
+          	interval = 30;
+          	format = "{icon}  ";
+          	format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           };
         };
       };
