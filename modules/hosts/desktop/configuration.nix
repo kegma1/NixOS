@@ -124,6 +124,9 @@
       pkgs.cava
       pkgs.qutebrowser
       pkgs.solaar
+      pkgs.pavucontrol
+      pkgs.libnotify
+      pkgs.playerctl
     ];
 
     system.stateVersion = "26.05";
