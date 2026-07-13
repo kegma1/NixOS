@@ -4,7 +4,7 @@
   inputs,
   ...
 }: {
-  flake.homeModules.waybar = {pkgs, ...}: let
+  flake.homeModules.waybar = {pkgs, config, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     stylix.targets.waybar.addCss = false;
@@ -22,7 +22,7 @@
           }
 
           window#waybar {
-            background-color: alpha(@base00, 0.99);
+            background-color: alpha(@base00, ${toString config.stylix.opacity.desktop});
             color: @base05;
             opacity: 0.99;
           }
@@ -72,7 +72,7 @@
 
           modules-left = ["custom/icon" "niri/workspaces"];
           modules-center = ["clock" "cava" "clock#date"];
-          modules-right = ["pulseaudio" "cpu" "memory" "network"];
+          modules-right = ["cpu" "memory" "network"];
 
           "clock" = {
             format = "{:%H時%M分}";
@@ -134,13 +134,12 @@
           };
           "cpu" = {
           	interval = 1;
-          	format = "  ";
+          	format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}  ";
           	format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           };
           "memory" = {
           	interval = 30;
-          	format = "{icon}  ";
-          	format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+          	format = "{used:0.1f}G/{total:0.1f}G  ";
           };
         };
       };
