@@ -22,6 +22,7 @@
   }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
+      extraSettings = [{ include = [{ optional = true; } "~/.config/niri/colors.kdl"];}];
       settings = {
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
@@ -93,8 +94,8 @@
           border = {
             on = _: {};
             width = 2;
-            active-color = "#83a598";
-            inactive-color = "#504945";
+            # active-color = "#83a598";
+            # inactive-color = "#504945";
           };
           shadow.on = _: {};
           # always-center-single-column = _: {};
