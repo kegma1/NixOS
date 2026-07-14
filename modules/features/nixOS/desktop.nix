@@ -14,6 +14,8 @@
       fuzzel
     ];
 
+    services.mako.enable = true;
+
     home.file.".config/niri/colors.kdl".text = ''
       layout {
         border {
