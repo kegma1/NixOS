@@ -25,10 +25,14 @@
       extraSettings = [{ include = [{ optional = true; } "~/.config/niri/colors.kdl"];}];
       settings = {
         spawn-at-startup = [
-          (lib.getExe self'.packages.myNoctalia)
+          # (lib.getExe self'.packages.myNoctalia)
           "steam"
           "discord"
           # [ "flatpak" "run" "com.discordapp.Discord" ]
+          (lib.getExe (
+            pkgs.writeShellScriptBin "wallpaper"
+            "${lib.getExe pkgs.swaybg} -i ${self.wallpaper} -m fill"
+          ))
         ];
         input = {
           focus-follows-mouse = _: {

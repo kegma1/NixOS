@@ -10,6 +10,7 @@
     stylix.targets.waybar.addCss = false;
     programs.waybar = {
       enable = true;
+      systemd.enable = true;
       style =
         lib.mkAfter
         /*
@@ -89,8 +90,7 @@
 
           "power-profiles-daemon" = {
             format = "{icon}";
-            tooltip-format = "Power profile: {profile}nCPU driver: {cpu_driver}nPlatform driver: {platform_driver}";
-            tooltip = true;
+            tooltip = false;
             format-icons = {
               default = " ";
               performance = " ";
