@@ -7,6 +7,7 @@
   flake.homeModules.zsh = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
+    imports = [self.homeModules.oh-my-posh];
     programs.zsh = {
       enable = true;
 
@@ -47,10 +48,6 @@
         colors
 
         export PAGER=less
-
-        if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-          eval "$(${lib.getExe selfpkgs.myOh-my-posh} init zsh)"
-        fi
       '';
     };
   };

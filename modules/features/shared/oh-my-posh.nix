@@ -3,13 +3,14 @@
   inputs,
   ...
 }: {
-  perSystem = {pkgs, ...}: {
-    packages.myOh-my-posh = inputs.wrapper-modules.wrappers.oh-my-posh.wrap {
-      inherit pkgs;
-      settings = {
-        # transient_prompt = {
-        #   template = " ";
-        # };
+  flake.homeModules.oh-my-posh = {pkgs, config, ...}: let
+    selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+    colors = config.lib.stylix.colors;
+  in {
+    programs.oh-my-posh = {
+       enable = true;
+        enableZshIntegration = true;
+       settings = {
         blocks = [
           {
             type = "prompt";
@@ -18,16 +19,16 @@
             segments = [
               {
                 type = "path";
-                background = "#464646";
-                foreground = "#fffdd0";
+                background = "#${colors.base01}";
+                foreground = "#${colors.base05}";
                 style = "plain";
                 properties.style = "full";
                 template = " {{ .Path }} ";
               }
               {
                 type = "git";
-                background = "#fffdd0";
-                foreground = "#464646";
+                background = "#${colors.base05}";
+                foreground = "#${colors.base01}";
                 # template = "{{ .UpstreamIcon }} {{ .HEAD }}{{if .Behind }} {{ .Behind }}{{ end }}{{if .Ahead }} {{ .Ahead }}{{ end }} ";
                 template = "{{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ";
                 options = {
@@ -73,6 +74,7 @@
           }
         ];
       };
+
     };
   };
 }
