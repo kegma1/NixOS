@@ -72,7 +72,32 @@
 
           modules-left = ["custom/icon" "niri/workspaces"];
           modules-center = ["clock" "cava" "clock#date"];
-          modules-right = ["cpu" "memory" "network"];
+          modules-right = ["mpris" "custom/seperator" "cpu" "memory" "network" "power-profiles-daemon"];
+
+          "mpris" = {
+          	format = "{player_icon} {dynamic}";
+          	format-paused = "{status_icon} <i>{dynamic}</i>";
+          	tooltip = false;
+          	dynamic-order = ["title" "artist"];
+          	player-icons = {
+          		default = "▶";
+          	};
+          	status-icons = {
+          		paused = "⏸";
+          	};
+          };
+
+          "power-profiles-daemon" = {
+            format = "{icon}";
+            tooltip-format = "Power profile: {profile}nCPU driver: {cpu_driver}nPlatform driver: {platform_driver}";
+            tooltip = true;
+            format-icons = {
+              default = " ";
+              performance = " ";
+              balanced = " ";
+              power-saver = " ";
+            };
+          };
 
           "clock" = {
             format = "{:%H時%M分}";
@@ -131,6 +156,11 @@
           };
           "custom/icon" = {
             format = " ";
+            on-click = "pkill fuzzel || fuzzel";
+          };
+          "custom/seperator" = {
+            format = " | ";
+            tooltip = false;
           };
           "cpu" = {
           	interval = 1;
