@@ -55,7 +55,7 @@
           #clock#date {
             margin: 0 15px;
             font-weight: 700;
-            font-size: 1.12rem;
+            font-size: 2.24rem;
           }
 
           .modules-left {
@@ -100,10 +100,10 @@
           };
 
           "clock" = {
-            format = "{:%H時%M分}";
+            format = "<b>{0:%H}</b>時<b>{0:%M}</b>分";
           };
           "clock#date" = {
-            format = "{:%m月%d日}";
+            format = "<b>{0:%m}</b>月<b>{0:%d}</b>日";
           };
           "niri/workspaces" = {
             format = "{icon}";
