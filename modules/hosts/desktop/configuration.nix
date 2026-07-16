@@ -35,8 +35,6 @@
     boot.kernelParams = ["quiet"];
     boot.plymouth.enable = true;
 
-    networking.hostName = "desktop";
-
     # Enable networking
     networking.networkmanager.enable = true;
 
@@ -52,13 +50,13 @@
     # Enable the GNOME Desktop Environment.
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
+    services.gvfs.enable = true;
+    services.udisks2.enable = true;
 
     programs.coolercontrol.enable = true;
 
     programs.nix-index-database.comma.enable = true;
 
-    services.gvfs.enable = true;
-    services.udisks2.enable = true;
 
     xdg.portal = {
       enable = true;
@@ -72,14 +70,15 @@
       };
     };
 
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+
     hardware.graphics.enable = true;
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia.open = true; # see the note above
     hardware.cpu.amd.updateMicrocode = true;
 
-    environment.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-    };
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -103,6 +102,10 @@
     # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
 
+    programs.firefox.enable = true;
+
+    networking.hostName = "desktop";
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users."kennet" = {
       isNormalUser = true;
@@ -113,10 +116,10 @@
     };
     home-manager.users."kennet" = self.homeModules.kennetModule;
 
-    programs.firefox.enable = true;
 
     environment.systemPackages = [
       pkgs.alacritty
+      pkgs.spotify
       pkgs.localsend
       pkgs.libva-utils
       pkgs.mission-center

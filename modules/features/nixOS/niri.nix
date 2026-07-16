@@ -26,7 +26,7 @@
       settings = {
         spawn-at-startup = [
           # (lib.getExe self'.packages.myNoctalia)
-          "steam"
+          "sleep 1 && steam"
           "discord"
           # [ "flatpak" "run" "com.discordapp.Discord" ]
           (lib.getExe (
