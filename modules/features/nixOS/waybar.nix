@@ -73,13 +73,15 @@
 
           modules-left = ["custom/icon" "niri/workspaces"];
           modules-center = ["clock" "cava" "clock#date"];
-          modules-right = ["mpris" "custom/seperator" "cpu" "memory" "network" "power-profiles-daemon"];
+          modules-right = ["mpris" "custom/seperator" "cpu" "memory" "network" "power-profiles-daemon" "custom/seperator" "tray"];
 
           "mpris" = {
           	format = "{player_icon} {dynamic}";
           	format-paused = "{status_icon} <i>{dynamic}</i>";
           	tooltip = false;
           	dynamic-order = ["title" "artist"];
+          	dynamic-len = 40;
+          	title-len = 40;
           	player-icons = {
           		default = "▶";
           	};
@@ -127,7 +129,7 @@
             framerate = 30;
             autosens = 0;
             sensitivity = 3;
-            bars = 14;
+            bars = 28;
             lower_cutoff_freq = 50;
             higher_cutoff_freq = 10000;
             method = "pulse";
@@ -157,9 +159,10 @@
           "custom/icon" = {
             format = " ";
             on-click = "pkill fuzzel || fuzzel";
+            tooltip = false;
           };
           "custom/seperator" = {
-            format = " | ";
+            format = "|";
             tooltip = false;
           };
           "cpu" = {
