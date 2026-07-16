@@ -18,6 +18,9 @@
       enable = true;
       borderRadius = 12;
     };
+    programs.wlogout = {
+      enable = true;
+    };
     home.file.".config/niri/colors.kdl".text = ''
       layout {
         border {

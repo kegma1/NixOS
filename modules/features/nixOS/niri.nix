@@ -148,7 +148,8 @@
           #   "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
           "Mod+S".spawn-sh = "pkill fuzzel || fuzzel";
-          "Mod+P".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
+          "Mod+P".spawn-sh = "pkill wlogout || wlogout";
+          # "Mod+P".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};
