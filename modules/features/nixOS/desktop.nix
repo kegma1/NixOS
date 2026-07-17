@@ -12,14 +12,12 @@
       kitty
       waybar
       fuzzel
+      wlogout
     ];
 
     services.mako = {
       enable = true;
-      borderRadius = 12;
-    };
-    programs.wlogout = {
-      enable = true;
+      # settings.border-radius = 12;
     };
     home.file.".config/niri/colors.kdl".text = ''
       layout {

@@ -88,6 +88,7 @@
 
         layout = {
           gaps = 10;
+          background-color = "transparent";
           preset-column-widths = [
             {proportion = 0.5;}
             {proportion = 0.666667;}
@@ -107,7 +108,7 @@
 
         window-rules = [
           {
-            geometry-corner-radius = 12;
+            # geometry-corner-radius = 12;
             clip-to-geometry = true;
             background-effect.blur = true;
             background-effect.xray = false;
@@ -138,7 +139,19 @@
             matches = [{namespace = "^noctalia-(background|launcher-overlay|dock)-.*$";}];
             background-effect.xray = false;
           }
+          {
+            matches = [{namespace = "^wallpaper$";}];
+            place-within-backdrop = true;
+          }
         ];
+
+        extraConfig = /*kdl*/''
+          overview {
+              workspace-shadow {
+                  off
+              }
+          }
+        '';
 
         xwayland-satellite.path =
           lib.getExe pkgs.xwayland-satellite;
