@@ -3,14 +3,18 @@
   inputs,
   ...
 }: {
-  flake.homeModules.oh-my-posh = {pkgs, config, ...}: let
+  flake.homeModules.oh-my-posh = {
+    pkgs,
+    config,
+    ...
+  }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
     colors = config.lib.stylix.colors;
   in {
     programs.oh-my-posh = {
-       enable = true;
-        enableZshIntegration = true;
-       settings = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
         blocks = [
           {
             type = "prompt";
@@ -18,12 +22,31 @@
             alignment = "left";
             segments = [
               {
-                type = "path";
+                type = "session";
                 background = "#${colors.base01}";
+                foreground = "#${colors.base05}";
+                style = "plain";
+                template = " {{ .UserName }}@{{ .HostName }} ";
+              }
+              {
+                type = "path";
+                background = "#${colors.base02}";
                 foreground = "#${colors.base05}";
                 style = "plain";
                 properties.style = "full";
                 template = " {{ .Path }} ";
+              }
+              {
+                type = "executiontime";
+                background = "#${colors.base03}";
+                foreground = "#${colors.base05}";
+                style = "plain";
+                template = " {{ .FormattedMs }} ";
+                options = {
+                  threshold = 500;
+                  style = "austin";
+                  always_enabled = false;
+                };
               }
               {
                 type = "git";
@@ -38,28 +61,28 @@
               }
             ];
           }
-          {
-            type = "prompt";
-            alignment = "right";
-            # filler = ".";
-            segments = [
-              {
-                type = "executiontime";
-                style = "plain";
-                template = "{{ .FormattedMs }}";
-                options = {
-                  threshold = 500;
-                  style = "austin";
-                  always_enabled = true;
-                };
-              }
-              {
-                type = "time";
-                style = "plain";
-                template = " {{ .Format }} ";
-              }
-            ];
-          }
+          # {
+          #   type = "prompt";
+          #   alignment = "right";
+          #   # filler = ".";
+          #   segments = [
+          #     {
+          #       type = "executiontime";
+          #       style = "plain";
+          #       template = "{{ .FormattedMs }}";
+          #       options = {
+          #         threshold = 500;
+          #         style = "austin";
+          #         always_enabled = true;
+          #       };
+          #     }
+          #     {
+          #       type = "time";
+          #       style = "plain";
+          #       template = " {{ .Format }} ";
+          #     }
+          #   ];
+          # }
           {
             type = "prompt";
             newline = true;
@@ -68,13 +91,17 @@
               {
                 type = "os";
                 style = "plain";
+                foreground_templates = [
+                  "{{if ne .Code 0}}#${colors.base08}{{end}}"
+                  "{{if eq .Code 0}}#${colors.base05}{{end}}"
+                ];
+                background = "transparent";
                 template = "{{ .Icon }}  ";
               }
             ];
           }
         ];
       };
-
     };
   };
 }

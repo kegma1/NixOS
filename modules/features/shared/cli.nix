@@ -29,6 +29,12 @@
       selfpkgs.myFastfetch
     ];
 
+    programs.nix-your-shell = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-output-monitor.enable = true;
+    };
+    
     programs.fzf = {
       enable = true;
       enableZshIntegration = true;
