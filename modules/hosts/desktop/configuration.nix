@@ -5,6 +5,7 @@
 }: {
   flake.nixosModules.desktopConfiguration = {
     config,
+    lib,
     pkgs,
     ...
   }: let
@@ -130,6 +131,18 @@
       pkgs.pavucontrol
       pkgs.libnotify
       pkgs.playerctl
+      (pkgs.writeShellScriptBin "fixisaac"
+        ''
+          pid=$(pgrep -n -f 'isaac-ng.exe')
+
+          sudo ${lib.getExe pkgs.gdb} -q -n -batch -p "$pid" \
+          -ex 'set pagination off' \
+          -ex 'python inf=gdb.selected_inferior(); inf.write_memory(0x00a9e941, bytes.fromhex("6a 01 ff 15 d8 82 b1 00 e9 50 01 00 00"))' \
+          -ex 'python inf=gdb.selected_inferior(); inf.write_memory(0x00a9e9c6, bytes.fromhex("e9 76 ff ff ff"))' \
+          -ex 'x/5bx 0x00a9e9c6' \
+          -ex 'x/13bx 0x00a9e941' \
+          -ex 'detach'
+        '')
     ];
 
     system.stateVersion = "26.05";
