@@ -26,7 +26,7 @@
           text = "Reboot";
         }
         {
-          action = "";
+          action = "swaylock";
           keybind = "l";
           label = "lock";
           text = "Lock";

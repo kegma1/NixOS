@@ -15,9 +15,15 @@
       wlogout
     ];
 
+    programs.swaylock = {
+      enable = true;      
+      settings = {
+        image = self.wallpaper;
+      };
+    };
+
     services.mako = {
       enable = true;
-      # settings.border-radius = 12;
     };
     home.file.".config/niri/colors.kdl".text = ''
       layout {
