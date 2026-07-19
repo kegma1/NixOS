@@ -49,12 +49,6 @@
           label = "hibernate";
           text = "Hibernate";
         }
-        {
-          action = "systemctl poweroff --firmware-setup";
-          keybind = "b";
-          label = "bios";
-          text = "BIOS";
-        }
       ];
     };
   };

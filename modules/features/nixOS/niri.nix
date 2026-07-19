@@ -26,8 +26,8 @@
       settings = {
         spawn-at-startup = [
           # (lib.getExe self'.packages.myNoctalia)
-          "sleep 1 && steam"
           "discord"
+          "sleep 1 && steam"
           # [ "flatpak" "run" "com.discordapp.Discord" ]
           (lib.getExe (
             pkgs.writeShellScriptBin "wallpaper"
@@ -99,8 +99,6 @@
           border = {
             on = _: {};
             width = 2;
-            # active-color = "#83a598";
-            # inactive-color = "#504945";
           };
           shadow.on = _: {};
           # always-center-single-column = _: {};
@@ -127,6 +125,10 @@
                 relative-to = "bottom-right";
               };
             };
+          }
+          {
+            matches = [{ app-id = "^kitty$";}];
+            background-effect.blur = false;
           }
         ];
 

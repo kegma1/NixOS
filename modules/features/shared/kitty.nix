@@ -17,8 +17,7 @@
         font_family = "Iosevka Nerd Font";
         shell = lib.getExe pkgs.zsh;
 
-        # background_opacity = 0.75;
-        # background_blur = 5;
+        window_padding_width = 10;
         allow_remote_control = "yes";
         shell_integration = "enabled";
         confirm_os_window_close = 0;
