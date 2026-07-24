@@ -21,6 +21,8 @@
       pkgs.yt-dlp
       pkgs.fzf
       pkgs.bat
+      pkgs.zip
+      pkgs.unzip
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
@@ -34,7 +36,7 @@
       enableZshIntegration = true;
       nix-output-monitor.enable = true;
     };
-    
+
     programs.fzf = {
       enable = true;
       enableZshIntegration = true;
