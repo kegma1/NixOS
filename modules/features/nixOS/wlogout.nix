@@ -4,14 +4,22 @@
   inputs,
   ...
 }: {
-  flake.homeModules.wlogout = {pkgs, config, ...}: let
+  flake.homeModules.wlogout = {
+    pkgs,
+    config,
+    ...
+  }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     programs.wlogout = {
       enable = true;
-      style = /*css*/ ''
-          
-      '';
+      style =
+        /*
+        css
+        */
+        ''
+
+        '';
       layout = [
         {
           action = "systemctl poweroff";

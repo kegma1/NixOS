@@ -1,11 +1,14 @@
-
 {
   lib,
   self,
   inputs,
   ...
 }: {
-  flake.homeModules.desktop = {pkgs, config, ...}: let
+  flake.homeModules.desktop = {
+    pkgs,
+    config,
+    ...
+  }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     imports = with self.homeModules; [
@@ -16,7 +19,7 @@
     ];
 
     programs.swaylock = {
-      enable = true;      
+      enable = true;
       settings = {
         image = self.wallpaper;
       };

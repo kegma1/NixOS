@@ -22,7 +22,7 @@
   }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
-      extraSettings = [{ include = [{ optional = true; } "~/.config/niri/colors.kdl"];}];
+      extraSettings = [{include = [{optional = true;} "~/.config/niri/colors.kdl"];}];
       settings = {
         spawn-at-startup = [
           # (lib.getExe self'.packages.myNoctalia)
@@ -58,7 +58,7 @@
         };
 
         gestures.hot-corners.off = _: {};
-    
+
         cursor.xcursor-theme = "Adwaita";
         outputs = {
           "DP-1" = {
@@ -127,7 +127,7 @@
             };
           }
           {
-            matches = [{ app-id = "^kitty$";}];
+            matches = [{app-id = "^kitty$";}];
             background-effect.blur = false;
           }
         ];
@@ -147,13 +147,17 @@
           }
         ];
 
-        extraConfig = /*kdl*/''
-          overview {
-              workspace-shadow {
-                  off
-              }
-          }
-        '';
+        extraConfig =
+          /*
+          kdl
+          */
+          ''
+            overview {
+                workspace-shadow {
+                    off
+                }
+            }
+          '';
 
         xwayland-satellite.path =
           lib.getExe pkgs.xwayland-satellite;

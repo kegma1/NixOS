@@ -4,7 +4,11 @@
   inputs,
   ...
 }: {
-  flake.homeModules.waybar = {pkgs, config, ...}: let
+  flake.homeModules.waybar = {
+    pkgs,
+    config,
+    ...
+  }: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     stylix.targets.waybar.addCss = false;
@@ -76,18 +80,18 @@
           modules-right = ["mpris" "custom/seperator" "cpu" "memory" "network" "power-profiles-daemon" "custom/seperator" "tray"];
 
           "mpris" = {
-          	format = "{player_icon} {dynamic}";
-          	format-paused = "{status_icon} <i>{dynamic}</i>";
-          	tooltip = false;
-          	dynamic-order = ["title" "artist"];
-          	dynamic-len = 40;
-          	title-len = 40;
-          	player-icons = {
-          		default = "▶";
-          	};
-          	status-icons = {
-          		paused = "⏸";
-          	};
+            format = "{player_icon} {dynamic}";
+            format-paused = "{status_icon} <i>{dynamic}</i>";
+            tooltip = false;
+            dynamic-order = ["title" "artist"];
+            dynamic-len = 40;
+            title-len = 40;
+            player-icons = {
+              default = "▶";
+            };
+            status-icons = {
+              paused = "⏸";
+            };
           };
 
           "power-profiles-daemon" = {
@@ -112,15 +116,15 @@
             display-condition = "only-populated";
             enable-bar-scroll = true;
             format-icons = {
-              "1"  = "一";
-              "2"  = "二";
-              "3"  = "三";
-              "4"  = "四";
-              "5"  = "五";
-              "6"  = "六";
-              "7"  = "七";
-              "8"  = "八";
-              "9"  = "九";
+              "1" = "一";
+              "2" = "二";
+              "3" = "三";
+              "4" = "四";
+              "5" = "五";
+              "6" = "六";
+              "7" = "七";
+              "8" = "八";
+              "9" = "九";
               "10" = "十";
             };
           };
@@ -166,13 +170,13 @@
             tooltip = false;
           };
           "cpu" = {
-          	interval = 1;
-          	format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}  ";
-          	format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+            interval = 1;
+            format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}  ";
+            format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           };
           "memory" = {
-          	interval = 30;
-          	format = "{used:0.1f}G/{total:0.1f}G  ";
+            interval = 30;
+            format = "{used:0.1f}G/{total:0.1f}G  ";
           };
         };
       };
