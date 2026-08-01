@@ -70,6 +70,31 @@
       };
     };
 
+    programs.nix-ld.enable = true;
+    programs.nix-ld.libraries = with pkgs;[
+          stdenv.cc.cc
+
+      # X11
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXi
+      xorg.libXrandr
+      xorg.libXrender
+      xorg.libXext
+      xorg.libXfixes
+
+      # Wayland
+      wayland
+      libxkbcommon
+
+      # Graphics
+      libGL
+      vulkan-loader
+
+      # Audio
+      alsa-lib
+      libpulseaudio
+    ];    
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };

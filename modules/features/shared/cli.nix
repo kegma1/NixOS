@@ -23,6 +23,7 @@
       pkgs.bat
       pkgs.zip
       pkgs.unzip
+      pkgs.file
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
