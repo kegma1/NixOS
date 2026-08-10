@@ -16,7 +16,7 @@
       pkgs.lazygit
       pkgs.wget
       pkgs.btop
-      pkgs.ffmpeg-full
+      pkgs.ffmpeg
       pkgs.yt-dlp
       pkgs.fzf
       pkgs.bat
