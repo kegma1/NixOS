@@ -37,6 +37,7 @@
       baseIndex = 1;
       mouse = true;
       shell = "${pkgs.zsh}/bin/zsh";
+      prefix = "C-space";
     };
 
     programs.nix-your-shell = {

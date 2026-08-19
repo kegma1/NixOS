@@ -8,7 +8,7 @@
     programs.appimage.binfmt = true;
 
     environment.systemPackages = with pkgs; [
-      gearlever
+      # gearlever
     ];
   };
 }
