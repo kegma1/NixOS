@@ -10,7 +10,6 @@
       self.homeModules.helix
     ];
     home.packages = [
-      pkgs.tmux
       pkgs.htop
       pkgs.tree
       pkgs.yazi
@@ -31,6 +30,14 @@
       selfpkgs.myGit
       selfpkgs.myFastfetch
     ];
+
+    programs.tmux = {
+      enable = true;
+      clock24 = true;
+      baseIndex = 1;
+      mouse = true;
+      shell = "${pkgs.zsh}/bin/zsh";
+    };
 
     programs.nix-your-shell = {
       enable = true;
