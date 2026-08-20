@@ -26,6 +26,7 @@
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
+      pkgs.bear
 
       selfpkgs.myGit
       selfpkgs.myFastfetch
