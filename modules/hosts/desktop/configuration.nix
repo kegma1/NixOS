@@ -54,7 +54,7 @@
     services.gvfs.enable = true;
     services.udisks2.enable = true;
 
-    programs.coolercontrol.enable = true;
+    # programs.coolercontrol.enable = true;
 
     programs.nix-index-database.comma.enable = true;
 
