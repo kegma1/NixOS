@@ -26,6 +26,7 @@
       pkgs.rsync
       pkgs.rsyncy
       pkgs.sshfs
+      pkgs.ripgrep
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
