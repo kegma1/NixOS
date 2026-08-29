@@ -100,8 +100,10 @@
     };
 
     hardware.graphics.enable = true;
+    hardware.graphics.enable32Bit = true;
     services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia.open = true; # see the note above
+    hardware.nvidia.open = true; 
+    hardware.nvidia.modesetting.enable = true;
     hardware.cpu.amd.updateMicrocode = true;
 
     # Configure keymap in X11
