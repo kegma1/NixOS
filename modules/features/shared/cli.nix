@@ -27,6 +27,7 @@
       pkgs.rsyncy
       pkgs.sshfs
       pkgs.ripgrep
+      pkgs.texlab
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
