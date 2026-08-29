@@ -23,6 +23,9 @@
       pkgs.zip
       pkgs.unzip
       pkgs.file
+      pkgs.rsync
+      pkgs.rsyncy
+      pkgs.sshfs
 
       # programming shii, burde enten være en egen modul eller lag til i devshells egentlig
       pkgs.clang-tools
