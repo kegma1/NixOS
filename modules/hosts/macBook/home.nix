@@ -9,6 +9,10 @@
       self.homeModules.cli
     ];
 
+    home.packages = [
+      pkgs.zed-editor
+    ];
+
     programs.helix = {
       languages = {
         language-server.nixd = {
