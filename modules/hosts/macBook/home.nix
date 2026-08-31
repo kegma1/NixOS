@@ -7,10 +7,10 @@
     imports = [
       self.homeModules.kitty
       self.homeModules.cli
+      self.homeModules.zed-editor
     ];
 
     home.packages = [
-      pkgs.zed-editor
     ];
 
     programs.helix = {
