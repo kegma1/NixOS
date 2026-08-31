@@ -1,4 +1,3 @@
-
 {
   inputs,
   self,
@@ -10,36 +9,35 @@
     programs.zed-editor = {
       enable = true;
       userSettings = {
-        ssh_connections= [
+        ssh_connections = [
           {
-            host= "ificluster.ifi.uit.no";
-            username= "kma150";
-            args= [];
-            projects= [
+            host = "ificluster.ifi.uit.no";
+            username = "kma150";
+            args = [];
+            projects = [
               {
-                paths= [
+                paths = [
                   "/mnt/users/kma150"
                 ];
               }
             ];
           }
         ];
-        agent= {
-          favorite_models= [];
-          model_parameters= [];
-          auto_compact= {
-            threshold= "90%";
+        agent = {
+          favorite_models = [];
+          model_parameters = [];
+          auto_compact = {
+            threshold = "90%";
           };
         };
-        helix_mode= true;
-        vim_mode= false;
-        base_keymap= "Zed";
+        helix_mode = true;
+        vim_mode = false;
+        base_keymap = "Zed";
         # theme= {
         #   mode= "system";
         #   light= "Gruvbox Light";
         #   dark= "Gruvbox Dark";
         # };
-        
       };
     };
   };

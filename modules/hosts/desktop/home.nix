@@ -21,7 +21,6 @@
     home.stateVersion = "24.11";
     xdg.autostart.enable = true;
 
-
     home.packages = with pkgs; [
       lavat
       alacritty

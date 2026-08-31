@@ -13,7 +13,7 @@
       settings.main = {
         terminal = "${lib.getExe pkgs.kitty} -e";
         show-actions = true;
-       # keyboard-focus = "on-demand";
+        # keyboard-focus = "on-demand";
       };
     };
   };

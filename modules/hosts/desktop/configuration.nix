@@ -71,8 +71,8 @@
     };
 
     programs.nix-ld.enable = true;
-    programs.nix-ld.libraries = with pkgs;[
-          stdenv.cc.cc
+    programs.nix-ld.libraries = with pkgs; [
+      stdenv.cc.cc
 
       # X11
       libX11
@@ -94,7 +94,7 @@
       # Audio
       alsa-lib
       libpulseaudio
-    ];    
+    ];
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
@@ -102,7 +102,7 @@
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
     services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia.open = true; 
+    hardware.nvidia.open = true;
     hardware.nvidia.modesetting.enable = true;
     hardware.cpu.amd.updateMicrocode = true;
 
