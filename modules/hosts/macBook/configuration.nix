@@ -18,6 +18,12 @@
     nixpkgs.hostPlatform = "aarch64-darwin";
     system.stateVersion = 6;
 
+    system.primaryUser = "kennetmathisen";
+    homebrew.enable = true;
+    homebrew.brews = [
+      "open-mpi"
+    ];
+
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     nixpkgs.config.allowUnfree = true;

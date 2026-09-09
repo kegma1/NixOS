@@ -28,6 +28,9 @@
         };
       };
     };
+    programs.zsh.initContent = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
     programs.direnv = {
       enable = true;
       enableZshIntegration = true;
