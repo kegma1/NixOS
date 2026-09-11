@@ -11,6 +11,7 @@
     imports = with self.homeModules; [
       desktop
       cli
+      zed-editor
     ];
 
     programs.helix.languages.language-server.nixd.config.nixd.options = {
