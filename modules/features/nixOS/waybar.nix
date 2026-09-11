@@ -76,7 +76,7 @@
           position = "top";
 
           modules-left = ["custom/icon" "niri/workspaces"];
-          modules-center = ["clock" "cava" "clock#date"];
+          modules-center = ["clock" "clock#date"];
           modules-right = ["mpris" "custom/seperator" "cpu" "memory" "network" "power-profiles-daemon" "custom/seperator" "tray"];
 
           "mpris" = {
