@@ -9,9 +9,15 @@
       self.homeModules.cli
       self.homeModules.zed-editor
     ];
+    services.podman.enable = true;
 
     home.packages = [
+      pkgs.texliveBasic
+      pkgs.dive
+      pkgs.podman-tui
+      pkgs.docker-compose
     ];
+
 
     programs.helix = {
       languages = {
