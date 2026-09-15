@@ -15,7 +15,16 @@
             name = "nix";
             language-servers = ["nixd"];
           }
+          {
+            name = "typst";
+            language-servers = ["tinymist" "typos"];
+          }
         ];
+
+        language-server.typos = {
+          command = "typos-lsp";
+          config.diagnosticSeverity = "Info";
+        };
 
         language-server.nixd = {
           command = "nixd";
