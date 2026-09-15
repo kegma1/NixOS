@@ -10,6 +10,7 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.ubuntu
       nerd-fonts.ubuntu-mono
+      antonio-font
     ];
   };
 }

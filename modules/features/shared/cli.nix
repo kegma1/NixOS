@@ -33,6 +33,12 @@
       pkgs.clang-tools
       pkgs.bear
 
+      # podman/docker shit
+      pkgs.dive
+      pkgs.podman-tui
+      pkgs.podman-desktop
+      pkgs.podman-compose
+
       selfpkgs.myGit
       selfpkgs.myFastfetch
     ];

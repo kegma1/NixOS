@@ -99,6 +99,16 @@
       NIXOS_OZONE_WL = "1";
     };
 
+    virtualisation.containers.enable = true;
+    virtualisation.containers.registries.search = [
+      "docker.io"
+    ];
+    virtualisation.podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings = { dns_enabled = true; };
+    };
+
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
     services.xserver.videoDrivers = ["nvidia"];
@@ -136,7 +146,7 @@
     users.users."kennet" = {
       isNormalUser = true;
       description = "Kennet";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "podman"];
       packages = with pkgs; [
       ];
     };
