@@ -13,21 +13,21 @@
   in {
     imports = with self.homeModules; [
       kitty
-      waybar
-      fuzzel
-      wlogout
+      # waybar
+      # fuzzel
+      # wlogout
     ];
 
-    programs.swaylock = {
-      enable = true;
-      settings = {
-        image = self.wallpaper;
-      };
-    };
+    # programs.swaylock = {
+    #   enable = true;
+    #   settings = {
+    #     image = self.wallpaper;
+    #   };
+    # };
 
-    services.mako = {
-      enable = true;
-    };
+    # services.mako = {
+    #   enable = true;
+    # };
     home.file.".config/niri/colors.kdl".text = ''
       layout {
         border {

@@ -43,7 +43,7 @@
             "diskPath": "/",
             "iconColor": "none",
             "id": "SystemMonitor",
-            "showCpuCores": false,
+            "showCpuCores": true,
             "showCpuFreq": false,
             "showCpuTemp": true,
             "showCpuUsage": true,
@@ -119,15 +119,6 @@
             "unreadBadgeColor": "primary"
           },
           {
-            "deviceNativePath": "__default__",
-            "displayMode": "graphic-clean",
-            "hideIfIdle": false,
-            "hideIfNotDetected": true,
-            "id": "Battery",
-            "showNoctaliaPerformance": false,
-            "showPowerProfiles": false
-          },
-          {
             "displayMode": "onhover",
             "iconColor": "none",
             "id": "Volume",
@@ -135,10 +126,15 @@
             "textColor": "none"
           },
           {
-            "applyToAllMonitors": false,
             "displayMode": "onhover",
             "iconColor": "none",
-            "id": "Brightness",
+            "id": "VPN",
+            "textColor": "none"
+          },
+          {
+            "displayMode": "onhover",
+            "iconColor": "none",
+            "id": "Network",
             "textColor": "none"
           },
           {
@@ -246,7 +242,7 @@
       "settingsPanelSideBarCardStyle": false
     },
     "location": {
-      "name": "Ballangen",
+      "name": "Oslo",
       "weatherEnabled": true,
       "weatherShowEffects": true,
       "weatherTaliaMascotAlways": false,
@@ -728,44 +724,44 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/kennet/Pictures/Wallpapers/windows-xp-bliss-4k-lu-2560x1440-3439635518.jpg",
-      "DP-2": "/home/kennet/Pictures/Wallpapers/windows-xp-bliss-4k-lu-3440x1440-3935449507.jpg"
+      "DP-1": "/home/kennet/Pictures/Wallpapers/sushi.jpg",
+      "DP-2": "/home/kennet/Pictures/Wallpapers/sushi.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
       "DP-1": {
-        "name": "DP-1",
         "connected": true,
-        "scale": 1,
-        "width": 2560,
         "height": 1440,
-        "x": 3440,
-        "y": 0,
-        "physical_width": 600,
+        "name": "DP-1",
         "physical_height": 340,
+        "physical_width": 600,
         "refresh_rate": 164999,
-        "vrr_supported": true,
+        "scale": 1,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": true,
+        "width": 2560,
+        "x": 3440,
+        "y": 0
       },
       "DP-2": {
-        "name": "DP-2",
         "connected": true,
-        "scale": 1,
-        "width": 3440,
         "height": 1440,
-        "x": 0,
-        "y": 0,
-        "physical_width": 810,
+        "name": "DP-2",
         "physical_height": 350,
+        "physical_width": 810,
         "refresh_rate": 174962,
-        "vrr_supported": true,
+        "scale": 1,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": true,
+        "width": 3440,
+        "x": 0,
+        "y": 0
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1783265298000
+      "lastSeenTs": 1790350936000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
