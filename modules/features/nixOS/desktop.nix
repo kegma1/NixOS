@@ -13,6 +13,7 @@
   in {
     imports = with self.homeModules; [
       kitty
+      noctalia
       # waybar
       # fuzzel
       # wlogout

@@ -25,14 +25,9 @@
       extraSettings = [{include = [{optional = true;} "~/.config/niri/colors.kdl"];}];
       settings = {
         spawn-at-startup = [
-          (lib.getExe self'.packages.myNoctalia)
+          "noctalia"
           "discord"
           "steam"
-          # [ "flatpak" "run" "com.discordapp.Discord" ]
-          # (lib.getExe (
-          #   pkgs.writeShellScriptBin "wallpaper"
-          #   "${lib.getExe pkgs.swaybg} -i ${self.wallpaper} -m fill"
-          # ))
         ];
         input = {
           focus-follows-mouse = _: {
@@ -147,18 +142,18 @@
           }
         ];
 
-        workspaces = {
-              "一" = _: {};
-              "二" = _: {};
-              "三" = _: {};
-              "四" = _: {};
-              "五" = _: {};
-              "六" = _: {};
-              "七" = _: {};
-              "八" = _: {};
-              "九" = _: {};
-              "十" = _: {};
-        };
+        # workspaces = {
+        #       "一" = _: {};
+        #       "二" = _: {};
+        #       "三" = _: {};
+        #       "四" = _: {};
+        #       "五" = _: {};
+        #       "六" = _: {};
+        #       "七" = _: {};
+        #       "八" = _: {};
+        #       "九" = _: {};
+        #       "十" = _: {};
+        # };
 
         extraConfig =
           /*
@@ -177,11 +172,11 @@
 
         binds = {
           "Mod+S".spawn-sh =
-            "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+            "noctalia msg panel-toggle launcher";
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
           # "Mod+S".spawn-sh = "pkill fuzzel || fuzzel";
           # "Mod+P".spawn-sh = "pkill wlogout || wlogout";
-          "Mod+P".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call sessionMenu toggle";
+          "Mod+P".spawn-sh = "noctalia msg panel-toggle session";
           "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};

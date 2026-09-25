@@ -38,6 +38,9 @@
 
     # Enable networking
     networking.networkmanager.enable = true;
+    networking.networkmanager.plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
 
     # Set your time zone.
     time.timeZone = "Europe/Oslo";
