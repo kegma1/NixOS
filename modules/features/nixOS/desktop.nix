@@ -18,6 +18,9 @@
       # fuzzel
       # wlogout
     ];
+    home.packages = [
+      pkgs.wl-clipboard
+    ];
 
     # programs.swaylock = {
     #   enable = true;
