@@ -41,6 +41,39 @@
     networking.networkmanager.plugins = with pkgs; [
       networkmanager-openconnect
     ];
+    networking.networkmanager.ensureProfiles.profiles = {
+      uit-vpn = {
+        connection = {
+          id = "UiT VPN";
+          type = "vpn";
+          autoconnect = false;
+
+          dns-over-tls = 0;
+          dnssec = 0;
+        };
+
+        vpn = {
+          service-type = "org.freedesktop.NetworkManager.openconnect";
+
+          gateway = "vpn.uit.no/student";
+          protocol = "anyconnect";
+          useragent = "AnyConnect";
+
+          cookie-flags = "1";
+
+          mtu = "1200";
+        };
+
+        ipv4 = {
+          method = "auto";
+          dns-search = "~uit.no";
+        };
+
+        ipv6.method = "auto";
+      };
+    };
+    
+
 
     # Set your time zone.
     time.timeZone = "Europe/Oslo";
