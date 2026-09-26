@@ -171,8 +171,7 @@
           lib.getExe pkgs.xwayland-satellite;
 
         binds = {
-          "Mod+S".spawn-sh =
-            "noctalia msg panel-toggle launcher";
+          "Mod+S".spawn-sh = "noctalia msg panel-toggle launcher";
           # "Mod+S".spawn-sh = "${lib.getExe self'.packages.myRofi} -show run";
           # "Mod+S".spawn-sh = "pkill fuzzel || fuzzel";
           # "Mod+P".spawn-sh = "pkill wlogout || wlogout";

@@ -18,7 +18,6 @@
       pkgs.docker-compose
     ];
 
-
     programs.helix = {
       languages = {
         language-server.nixd = {
