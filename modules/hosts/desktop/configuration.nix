@@ -59,7 +59,7 @@
           protocol = "anyconnect";
           useragent = "AnyConnect";
 
-          cookie-flags = "1";
+          cookie-flags = "2";
 
           mtu = "1200";
         };
