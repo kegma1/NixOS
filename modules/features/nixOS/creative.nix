@@ -8,6 +8,7 @@
       kdePackages.kdenlive
       krita
       blender
+      inkscape
     ];
   };
 }
