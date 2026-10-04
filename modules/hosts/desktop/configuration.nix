@@ -72,7 +72,7 @@
         ipv6.method = "auto";
       };
     };
-    
+    services.tailscale.enable = true;
 
 
     # Set your time zone.
