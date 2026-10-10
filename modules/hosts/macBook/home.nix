@@ -8,6 +8,7 @@
       self.homeModules.kitty
       self.homeModules.cli
       self.homeModules.zed-editor
+      self.homeModules.obsidian
     ];
     services.podman.enable = true;
 
