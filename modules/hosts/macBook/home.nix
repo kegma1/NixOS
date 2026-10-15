@@ -9,6 +9,7 @@
       self.homeModules.cli
       self.homeModules.zed-editor
       self.homeModules.obsidian
+      self.homeModules.librewolf
     ];
     services.podman.enable = true;
 
