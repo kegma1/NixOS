@@ -16,9 +16,14 @@
       profiles.Kennet = {
         userChrome = ''
             #TabsToolbar { display: none !important;}
-            #sidebar-splitter { display: none !important; }
+            #sidebar-splitter { width: 5px !important; }
             #sidebar-panel-header { display: none !important; }
-            #sidebar-box { min-width: 0 !important; }
+            #sidebar-header { display: none !important; }
+            #sidebar-box {
+              min-width: 0 !important;
+              padding: 0 !important;
+            }
+
           '';
         extensions = {
           packages = with inputs.firefox-addons.packages."${pkgs.stdenv.hostPlatform.system}"; [
@@ -35,6 +40,7 @@
           "network.cookie.lifetimePolicy" = 0;
           "sidebar.position_start" = false;
           "extensions.autoDisableScopes" = 0;
+          "browser.toolbars.bookmarks.visibility" = "never";
         };
         
 
