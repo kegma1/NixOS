@@ -25,6 +25,7 @@
       self.nixosModules.appimage
 
       self.sharedModules.theme
+      self.nixosModules.qt
 
       self.sharedModules.nix
       self.sharedModules.fonts
