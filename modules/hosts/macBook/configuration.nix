@@ -46,6 +46,7 @@
       home = "/Users/kennetmathisen";
     };
     home-manager.users."kennetmathisen" = self.homeModules.kennetmathisenModule;
+    home-manager.backupFileExtension = "backup";
     security.pam.services.sudo_local.touchIdAuth = true;
 
     system.keyboard = {
