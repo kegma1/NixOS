@@ -136,9 +136,14 @@
     };
 
     virtualisation.containers.enable = true;
-    virtualisation.containers.registries.search = [
-      "docker.io"
-    ];
+    virtualisation.containers.registries.settings = {
+      registries = {
+        search.registries = [
+          "docker.io"
+          "quay.io"
+        ];
+      };
+    };
     virtualisation.podman = {
       enable = true;
       dockerCompat = true;

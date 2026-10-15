@@ -8,6 +8,8 @@
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     stylix.enable = true;
+    qt.platformTheme = lib.mkForce "gnome";
+    stylix.targets.qt.platform = lib.mkForce "qtct";
 
     # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
