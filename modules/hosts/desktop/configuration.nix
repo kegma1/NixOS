@@ -74,7 +74,6 @@
     };
     services.tailscale.enable = true;
 
-
     # Set your time zone.
     time.timeZone = "Europe/Oslo";
 
@@ -136,9 +135,14 @@
     };
 
     virtualisation.containers.enable = true;
-    virtualisation.containers.registries.search = [
-      "docker.io"
-    ];
+    virtualisation.containers.registries.settings = {
+      registries = {
+        search.registries = [
+          "docker.io"
+          "quay.io"
+        ];
+      };
+    };
     virtualisation.podman = {
       enable = true;
       dockerCompat = true;
@@ -187,6 +191,7 @@
       ];
     };
     home-manager.users."kennet" = self.homeModules.kennetModule;
+    home-manager.backupFileExtension = "backup";
 
     environment.systemPackages = [
     ];

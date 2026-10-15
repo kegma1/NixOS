@@ -12,6 +12,7 @@
       desktop
       cli
       zed-editor
+      librewolf
     ];
 
     programs.helix.languages.language-server.nixd.config.nixd.options = {

@@ -180,6 +180,7 @@
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+Q".close-window = _: {};
           "Mod+Z".spawn-sh = "app.zen_browser.zen";
+          "Mod+alt+Z".spawn-sh = "librewolf";
 
           # "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
           #     inherit pkgs;

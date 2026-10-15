@@ -17,16 +17,16 @@
           };
 
           corePlugins = [
-            { name = "backlink"; }
-            { name = "command-palette"; }
-            { name = "daily-notes"; }
-            { name = "editor-status"; }
-            { name = "file-explorer"; }
-            { name = "global-search"; }
-            { name = "outgoing-link"; }
-            { name = "outline"; }
-            { name = "switcher"; }
-            { name = "templates"; }
+            {name = "backlink";}
+            {name = "command-palette";}
+            {name = "daily-notes";}
+            {name = "editor-status";}
+            {name = "file-explorer";}
+            {name = "global-search";}
+            {name = "outgoing-link";}
+            {name = "outline";}
+            {name = "switcher";}
+            {name = "templates";}
           ];
         };
       };
