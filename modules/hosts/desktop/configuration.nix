@@ -74,7 +74,6 @@
     };
     services.tailscale.enable = true;
 
-
     # Set your time zone.
     time.timeZone = "Europe/Oslo";
 
@@ -192,6 +191,7 @@
       ];
     };
     home-manager.users."kennet" = self.homeModules.kennetModule;
+    home-manager.backupFileExtension = "backup";
 
     environment.systemPackages = [
     ];
