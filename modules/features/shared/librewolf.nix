@@ -7,7 +7,19 @@
   flake.homeModules.librewolf = {pkgs, ...}: {
     programs.librewolf = {
       enable = true;
+      policies.ExtensionSettings = {
+        "{c5aac142-6134-4857-81a9-6a5fc9da2355}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/gruvbox-d-m/latest.xpi";
+          installation_mode = "force_installed";
+        };
+      };
       profiles.Kennet = {
+        userChrome = ''
+            #TabsToolbar { display: none !important;}
+            #sidebar-splitter { display: none !important; }
+            #sidebar-panel-header { display: none !important; }
+            #sidebar-box { min-width: 0 !important; }
+          '';
         extensions = {
           packages = with inputs.firefox-addons.packages."${pkgs.stdenv.hostPlatform.system}"; [
             bitwarden
@@ -15,7 +27,18 @@
             sidebery
           ];
         };
+        settings = {
+          "webgl.disabled" = false;
+          "privacy.resistFingerprinting" = false;
+          "privacy.clearOnShutdown.history" = false;
+          "privacy.clearOnShutdown.cookies" = false;
+          "network.cookie.lifetimePolicy" = 0;
+          "sidebar.position_start" = false;
+          "extensions.autoDisableScopes" = 0;
+        };
+        
 
+        search.force = true;
         search.engines = {
           nix-packages = {
             name = "Nix Packages";
@@ -45,9 +68,6 @@
             iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
             definedAliases = ["@nw"];
           };
-
-          bing.metaData.hidden = true;
-          google.metaData.alias = "@g"; # builtin engines only support specifying one additional alias
         };
       };
     };
