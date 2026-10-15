@@ -12,6 +12,7 @@
           email = "kennetam02@gmail.com";
         };
         init.defaultBranch = "main";
+        pull.rebase = true;
       };
     };
   };
