@@ -11,7 +11,7 @@
     imports = with self.homeModules; [
       desktop
       cli
-      zed-editor
+      gram
       librewolf
     ];
 

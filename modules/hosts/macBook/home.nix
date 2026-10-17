@@ -4,20 +4,20 @@
   ...
 }: {
   flake.homeModules.kennetmathisenModule = {pkgs, ...}: {
-    imports = [
-      self.homeModules.kitty
-      self.homeModules.cli
-      self.homeModules.zed-editor
-      self.homeModules.obsidian
-      self.homeModules.librewolf
+    imports = with self.homeModules; [
+      kitty
+      cli
+      gram
+      obsidian
+      librewolf
     ];
     services.podman.enable = true;
 
-    home.packages = [
-      pkgs.texliveBasic
-      pkgs.dive
-      pkgs.podman-tui
-      pkgs.docker-compose
+    home.packages = with pkgs; [
+      texliveBasic
+      dive
+      podman-tui
+      docker-compose
     ];
 
     programs.helix = {
