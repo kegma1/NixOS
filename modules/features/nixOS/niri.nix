@@ -28,6 +28,7 @@
           "noctalia"
           "discord"
           "steam"
+          "coolercontrol"
         ];
         input = {
           focus-follows-mouse = _: {

@@ -35,6 +35,7 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.kernelParams = ["quiet"];
+    boot.kernelModules =  ["nct6775"];
     boot.plymouth.enable = true;
 
     # Enable networking
@@ -90,7 +91,7 @@
     services.gvfs.enable = true;
     services.udisks2.enable = true;
 
-    # programs.coolercontrol.enable = true;
+    programs.coolercontrol.enable = true;
 
     programs.nix-index-database.comma.enable = true;
 
@@ -194,7 +195,8 @@
     home-manager.users."kennet" = self.homeModules.kennetModule;
     home-manager.backupFileExtension = "backup";
 
-    environment.systemPackages = [
+    environment.systemPackages = with pkgs; [
+      lm_sensors
     ];
 
     system.stateVersion = "26.05";
