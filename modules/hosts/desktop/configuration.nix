@@ -35,7 +35,7 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.kernelParams = ["quiet"];
-    boot.kernelModules =  ["nct6775"];
+    boot.kernelModules = ["nct6775"];
     boot.plymouth.enable = true;
 
     # Enable networking

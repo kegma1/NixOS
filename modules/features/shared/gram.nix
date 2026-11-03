@@ -1,4 +1,3 @@
-
 {
   inputs,
   self,
@@ -8,8 +7,8 @@
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     programs.gram = {
-     enable = true;
-     settings = {
+      enable = true;
+      settings = {
         ssh_connections = [
           {
             host = "ificluster.ifi.uit.no";

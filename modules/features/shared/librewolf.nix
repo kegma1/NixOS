@@ -15,16 +15,16 @@
       };
       profiles.Kennet = {
         userChrome = ''
-            #TabsToolbar { display: none !important;}
-            #sidebar-splitter { width: 5px !important; }
-            #sidebar-panel-header { display: none !important; }
-            #sidebar-header { display: none !important; }
-            #sidebar-box {
-              min-width: 0 !important;
-              padding: 0 !important;
-            }
+          #TabsToolbar { display: none !important;}
+          #sidebar-splitter { width: 5px !important; }
+          #sidebar-panel-header { display: none !important; }
+          #sidebar-header { display: none !important; }
+          #sidebar-box {
+            min-width: 0 !important;
+            padding: 0 !important;
+          }
 
-          '';
+        '';
         extensions = {
           packages = with inputs.firefox-addons.packages."${pkgs.stdenv.hostPlatform.system}"; [
             bitwarden
@@ -42,7 +42,6 @@
           "extensions.autoDisableScopes" = 0;
           "browser.toolbars.bookmarks.visibility" = "never";
         };
-        
 
         search.force = true;
         search.engines = {
@@ -78,5 +77,15 @@
       };
     };
     stylix.targets.librewolf.profileNames = ["Kennet"];
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = "librewolf.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/https" = "librewolf.desktop";
+        "x-scheme-handler/about" = "librewolf.desktop";
+        "x-scheme-handler/unknown" = "librewolf.desktop";
+      };
+    };
   };
 }
