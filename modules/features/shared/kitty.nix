@@ -12,6 +12,7 @@
     programs.kitty = {
       enable = true;
       shellIntegration.enableZshIntegration = true;
+      enableGitIntegration = true;
       keybindings = {
         "ctrl+1" = "goto_tab 1";
         "ctrl+2" = "goto_tab 2";
@@ -28,6 +29,9 @@
         allow_remote_control = "yes";
         shell_integration = "enabled";
         confirm_os_window_close = 0;
+        disable_ligatures = "always";
+        tab_bar_align = "center";
+
       };
     };
   };
