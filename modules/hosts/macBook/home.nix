@@ -7,7 +7,6 @@
     imports = with self.homeModules; [
       kitty
       cli
-      gram
       obsidian
       librewolf
     ];

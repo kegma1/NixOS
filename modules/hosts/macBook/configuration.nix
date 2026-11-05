@@ -34,6 +34,7 @@
     homebrew.brews = [
       "open-mpi"
     ];
+    homebrew.casks = ["docker-desktop"];
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
