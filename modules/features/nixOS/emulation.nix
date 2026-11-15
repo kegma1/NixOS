@@ -7,6 +7,7 @@
     environment.systemPackages = with pkgs; [
       dolphin-emu
       parallel-launcher
+      pcsx2
     ];
   };
 }

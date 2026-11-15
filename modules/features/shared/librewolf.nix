@@ -76,8 +76,6 @@
         };
       };
     };
-    stylix.targets.librewolf.profileNames = ["Kennet"];
-  } // lib.mkIf pkgs.hostPlatform.isLinux {
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
@@ -88,5 +86,6 @@
         "x-scheme-handler/unknown" = "librewolf.desktop";
       };
     };
-  };
+  stylix.targets.librewolf.profileNames = ["Kennet"];
+  } ;
 }

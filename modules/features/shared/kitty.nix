@@ -14,7 +14,7 @@
       shellIntegration.enableZshIntegration = true;
       enableGitIntegration = true;
       keybindings = let
-          mod = if pkgs.hostPlatform.isDarwin then "cmd" else "alt";
+          mod = if pkgs.stdenv.hostPlatform.isDarwin then "cmd" else "ctrl";
         in {
         "${mod}+1" = "goto_tab 1";
         "${mod}+2" = "goto_tab 2";
@@ -25,7 +25,6 @@
         "${mod}+7" = "goto_tab 7";
         "${mod}+8" = "goto_tab 8";
         "${mod}+9" = "goto_tab 9";
-        "${mod}+0" = "goto_tab -1";
 
         "${mod}+w" = "close_tab";
         "${mod}+t" = "new_tab_with_cwd";

@@ -51,6 +51,10 @@
           mouse = {
             accel-profile = "flat";
           };
+
+          tablet = {
+            map-to-output = "DP-2";
+          };
         };
 
         gestures.hot-corners.off = _: {};
