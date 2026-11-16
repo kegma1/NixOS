@@ -14,8 +14,11 @@
       shellIntegration.enableZshIntegration = true;
       enableGitIntegration = true;
       keybindings = let
-          mod = if pkgs.stdenv.hostPlatform.isDarwin then "cmd" else "ctrl";
-        in {
+        mod =
+          if pkgs.stdenv.hostPlatform.isDarwin
+          then "cmd"
+          else "ctrl";
+      in {
         "${mod}+1" = "goto_tab 1";
         "${mod}+2" = "goto_tab 2";
         "${mod}+3" = "goto_tab 3";
@@ -44,7 +47,6 @@
         disable_ligatures = "always";
         tab_bar_align = "center";
         macos_option_as_alt = "both";
-
       };
     };
   };

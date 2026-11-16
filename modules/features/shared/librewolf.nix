@@ -77,7 +77,7 @@
       };
     };
     xdg.mimeApps = {
-      enable = true;
+      enable = pkgs.stdenv.isLinux;
       defaultApplications = {
         "text/html" = "librewolf.desktop";
         "x-scheme-handler/http" = "librewolf.desktop";
@@ -86,6 +86,6 @@
         "x-scheme-handler/unknown" = "librewolf.desktop";
       };
     };
-  stylix.targets.librewolf.profileNames = ["Kennet"];
-  } ;
+    stylix.targets.librewolf.profileNames = ["Kennet"];
+  };
 }
