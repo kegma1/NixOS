@@ -32,7 +32,6 @@
       mission-center
       kdePackages.filelight
       cava
-      qutebrowser
       solaar
       pavucontrol
       libnotify
