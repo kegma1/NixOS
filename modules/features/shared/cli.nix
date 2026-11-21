@@ -12,7 +12,8 @@
     home.packages = [
       pkgs.htop
       pkgs.tree
-      pkgs.yazi
+      pkgs.felix-fm
+      pkgs.nnn
       pkgs.lazygit
       pkgs.wget
       pkgs.btop
