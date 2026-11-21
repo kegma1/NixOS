@@ -9,6 +9,7 @@
   in {
     programs.helix = {
       enable = true;
+      defaultEditor = true;
       languages = {
         language = [
           {
