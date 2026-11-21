@@ -46,7 +46,7 @@
         confirm_os_window_close = 0;
         disable_ligatures = "always";
         tab_bar_align = "center";
-        macos_option_as_alt = "both";
+        macos_option_as_alt = "no";
       };
     };
   };

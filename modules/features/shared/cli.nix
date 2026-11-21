@@ -10,10 +10,9 @@
       self.homeModules.helix
     ];
     home.packages = [
+      pkgs.chafa
       pkgs.htop
       pkgs.tree
-      pkgs.felix-fm
-      pkgs.nnn
       pkgs.lazygit
       pkgs.wget
       pkgs.btop
@@ -43,6 +42,22 @@
       selfpkgs.myGit
       selfpkgs.myFastfetch
     ];
+
+    programs.nnn = {
+      enable = true;
+      enableZshIntegration = true;
+      package = pkgs.nnn.override { withNerdIcons = true; };
+      quitcd = true;
+      
+      bookmarks = {
+        d = "~/Documents";
+        D = "~/Downloads";
+        p = "~/Pictures";
+        v = "~/Videos";
+        P = "~/Projekts";
+      };
+      
+    };
 
     programs.tmux = {
       enable = true;
