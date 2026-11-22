@@ -126,7 +126,16 @@
         window-rules = [
           {
             clip-to-geometry = true;
+          }
+          {
+            matches = [ { is-active = false; } ];
             opacity = 0.80;
+            background-effect.blur = true;
+            background-effect.xray = true;
+          }
+          {
+            matches = [{app-id = "^kitty$"; is-active = true;}];
+            opacity = 0.95;
             background-effect.blur = true;
             background-effect.xray = true;
           }
@@ -145,39 +154,9 @@
               };
             };
           }
-          # {
-          #   matches = [{app-id = "^kitty$";}];
-          #   background-effect.blur = false;
-          # }
         ];
 
-        layer-rules = [
-          {
-            matches = [{namespace = "^noctalia-overview*";}];
-            place-within-backdrop = true;
-          }
-          {
-            matches = [{namespace = "^noctalia-(background|launcher-overlay|dock)-.*$";}];
-            background-effect.xray = false;
-          }
-          {
-            matches = [{namespace = "^wallpaper$";}];
-            place-within-backdrop = true;
-          }
-        ];
-
-
-        extraConfig =
-          /*
-          kdl
-          */
-          ''
-            overview {
-                workspace-shadow {
-                    off
-                }
-            }
-          '';
+        layer-rules = [ ];
 
         xwayland-satellite.path =
           lib.getExe pkgs.xwayland-satellite;
