@@ -22,7 +22,7 @@
   }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
-      extraSettings = [{include = [{optional = true;} "~/.config/niri/colors.kdl"];}];
+      # extraSettings = [{include = [{optional = true;} "~/.config/niri/colors.kdl"];}];
       settings = {
         spawn-at-startup = [
           "noctalia"
@@ -86,8 +86,15 @@
         prefer-no-csd = _: {};
         hotkey-overlay.skip-at-startup = _: {};
 
+        blur = {
+            passes = 3;
+            offset = 3.0;
+            noise = 0.02;
+            saturation = 1.5;
+        };
+
         layout = {
-          gaps = 10;
+          gaps = 22;
           background-color = "transparent";
           preset-column-widths = [
             {proportion = 0.5;}
@@ -99,17 +106,23 @@
           border = {
             on = _: {};
             width = 2;
+            active-color = "#000000";
+            inactive-color = "#000000";
           };
           shadow.on = _: {};
-          # always-center-single-column = _: {};
+          softness = 0;
+          spread = 0;
+          offset = {x=9; y=9;};
+          color = "#000000";
+          always-center-single-column = _: {};
         };
 
         window-rules = [
           {
-            # geometry-corner-radius = 12;
             clip-to-geometry = true;
+            opacity = 0.80;
             background-effect.blur = true;
-            background-effect.xray = false;
+            background-effect.xray = true;
           }
           {
             matches = [
@@ -126,10 +139,10 @@
               };
             };
           }
-          {
-            matches = [{app-id = "^kitty$";}];
-            background-effect.blur = false;
-          }
+          # {
+          #   matches = [{app-id = "^kitty$";}];
+          #   background-effect.blur = false;
+          # }
         ];
 
         layer-rules = [
@@ -147,18 +160,6 @@
           }
         ];
 
-        # workspaces = {
-        #       "一" = _: {};
-        #       "二" = _: {};
-        #       "三" = _: {};
-        #       "四" = _: {};
-        #       "五" = _: {};
-        #       "六" = _: {};
-        #       "七" = _: {};
-        #       "八" = _: {};
-        #       "九" = _: {};
-        #       "十" = _: {};
-        # };
 
         extraConfig =
           /*
@@ -187,26 +188,6 @@
           "Mod+alt+Z".spawn-sh = "app.zen_browser.zen";
           "Mod+Z".spawn-sh = "librewolf";
 
-          # "Mod+D".spawn-sh = lib.getExe (inputs.wrapper-modules.wrappers.wlr-which-key.wrap {
-          #     inherit pkgs;
-          #     settings = {
-          #       anchor = "center";
-          #       menu = [
-          #         {
-          #           key = "d";
-          #           desc = "Discord";
-          #           cmd = "discord";
-          #           # cmd = "flatpak run com.discordapp.Discord";
-          #         }
-          #         {
-          #           key = "z";
-          #           desc = "Zen";
-          #           cmd = "flatpak run app.zen_browser.zen";
-          #         }
-          #       ];
-          #     };
-          #   }
-          # );
           "Mod+F".maximize-column = _: {};
           "Mod+G".fullscreen-window = _: {};
           "Mod+Shift+F".toggle-window-floating = _: {};
