@@ -17,7 +17,6 @@
   perSystem = {
     pkgs,
     lib,
-    self',
     ...
   }: {
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
@@ -109,11 +108,18 @@
             active-color = "#000000";
             inactive-color = "#000000";
           };
-          shadow.on = _: {};
-          softness = 0;
-          spread = 0;
-          offset = {x=9; y=9;};
-          color = "#000000";
+          shadow = {
+            on = _: {};
+            softness = 0;
+            spread = 0;
+            offset = _: {
+              props = {
+                x=9;
+                y=9;
+              };
+            };
+            color = "#000000";            
+          };
           always-center-single-column = _: {};
         };
 
