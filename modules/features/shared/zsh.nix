@@ -10,6 +10,7 @@
     imports = [self.homeModules.oh-my-posh];
     programs.zsh = {
       enable = true;
+      autosuggestion.enable = true;
 
       history = {
         path = "$HOME/.zsh_history";
