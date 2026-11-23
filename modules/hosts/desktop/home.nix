@@ -36,6 +36,7 @@
       pavucontrol
       libnotify
       playerctl
+      quickshell
       (pkgs.writeShellScriptBin "fixisaac"
         ''
           pid=$(pgrep -n -f 'isaac-ng.exe')

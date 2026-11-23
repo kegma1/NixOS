@@ -20,27 +20,32 @@
     ];
     home.packages = [
       pkgs.wl-clipboard
-      pkgs.nautilus
-      pkgs.mpv
     ];
 
-    # programs.swaylock = {
-    #   enable = true;
-    #   settings = {
-    #     image = self.wallpaper;
-    #   };
-    # };
+    programs.mpv.enable = true;
+    xdg.enable = true;
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        # Images
+        "image/avif" = [ "mpv.desktop" ];
+        "image/bmp" = [ "mpv.desktop" ];
+        "image/gif" = [ "mpv.desktop" ];
+        "image/jpeg" = [ "mpv.desktop" ];
+        "image/png" = [ "mpv.desktop" ];
+        "image/svg+xml" = [ "mpv.desktop" ];
+        "image/tiff" = [ "mpv.desktop" ];
+        "image/webp" = [ "mpv.desktop" ];
 
-    # services.mako = {
-    #   enable = true;
-    # };
-    home.file.".config/niri/colors.kdl".text = ''
-      layout {
-        border {
-          active-color "#${config.lib.stylix.colors.base0D}"
-          inactive-color "#${config.lib.stylix.colors.base03}"
-        }
-      }
-    '';
+        # Videos
+        "video/mp4" = [ "mpv.desktop" ];
+        "video/mpeg" = [ "mpv.desktop" ];
+        "video/ogg" = [ "mpv.desktop" ];
+        "video/webm" = [ "mpv.desktop" ];
+        "video/x-matroska" = [ "mpv.desktop" ];
+        "video/x-msvideo" = [ "mpv.desktop" ];
+        "video/quicktime" = [ "mpv.desktop" ];
+      };
+    };
   };
 }
