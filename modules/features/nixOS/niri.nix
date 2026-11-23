@@ -61,6 +61,7 @@
         cursor.xcursor-theme = "Adwaita";
         outputs = {
           "DP-1" = {
+            layout.default-column-width = {proportion = 0.666667;};
             mode = "2560x1440@164.999";
             position = _: {
               props = {
@@ -71,6 +72,7 @@
           };
 
           "DP-2" = {
+            layout.default-column-width = {proportion = 0.5;};
             focus-at-startup = _: {};
             mode = "3440x1440@174.962";
             position = _: {
@@ -96,8 +98,8 @@
           gaps = 22;
           background-color = "transparent";
           preset-column-widths = [
-            {proportion = 0.5;}
             {proportion = 0.666667;}
+            {proportion = 0.5;}
             {proportion = 0.333333;}
           ];
           focus-ring.off = _: {};

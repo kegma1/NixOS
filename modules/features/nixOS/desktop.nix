@@ -20,6 +20,8 @@
     ];
     home.packages = [
       pkgs.wl-clipboard
+      pkgs.nautilus
+      pkgs.mpv
     ];
 
     # programs.swaylock = {
