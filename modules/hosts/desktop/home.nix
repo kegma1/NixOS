@@ -37,6 +37,7 @@
       libnotify
       playerctl
       quickshell
+      kdePackages.qtdeclarative
       (pkgs.writeShellScriptBin "fixisaac"
         ''
           pid=$(pgrep -n -f 'isaac-ng.exe')
